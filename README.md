@@ -49,15 +49,6 @@ Each notebook is self-contained with installation instructions and can be run in
 - Practical examples with real datasets
 - Performance monitoring and visualization
 
-## Requirements
-
-- Python 3.9+
-- PyTorch
-- TensorFlow/Keras
-- OpenAI Gymnasium
-- NumPy
-- Additional dependencies as specified in individual notebooks
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
