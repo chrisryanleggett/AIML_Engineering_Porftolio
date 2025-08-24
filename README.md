@@ -11,28 +11,16 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 |----------|-------------|
 | `BasicTensorExamples.ipynb` | Introduction to PyTorch tensors, data types, and basic operations |
 
-### `Keras/Deep Learning/Building Advanced Transformers/`
+### `Keras/`
 | Notebook | Description |
 |----------|-------------|
-| `TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer |
-| `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting |
-
-### `Keras/Deep Learning/Keras Techniques/`
-| Notebook | Description |
-|----------|-------------|
-| `CustomTrainingLoopExample.ipynb` | Implementation of custom training loops with callbacks |
-| `HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner |
-| `ModelOptimizationTechniques.ipynb` | Model optimization and performance enhancement strategies |
-
-### `Keras/Deep Learning/RNNs/`
-| Notebook | Description |
-|----------|-------------|
-| `RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting |
-
-### `Keras/Reinforcement Learning/`
-| Notebook | Description |
-|----------|-------------|
-| `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment |
+| `Deep Learning/Building Advanced Transformers/TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer |
+| `Deep Learning/Building Advanced Transformers/TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting |
+| `Deep Learning/Keras Techniques/CustomTrainingLoopExample.ipynb` | Implementation of custom training loops with callbacks |
+| `Deep Learning/Keras Techniques/HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner |
+| `Deep Learning/Keras Techniques/ModelOptimizationTechniques.ipynb` | Model optimization and performance enhancement strategies |
+| `Deep Learning/RNNs/RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting |
+| `Reinforcement Learning/OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment |
 
 ## Key Concepts Covered
 
