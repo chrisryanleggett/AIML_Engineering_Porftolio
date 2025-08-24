@@ -1,108 +1,31 @@
-Deep Learning/Building Advanced Transformers/.ipynb_checkpoints/TimeSeriesPrediction-checkpoint.ipynb
-Deep Learning/RNNs/.ipynb_checkpoints/RNN_For_TimeSeries_Predictions-checkpoint.ipynb
-Deep Learning/Building Advanced Transformers/.ipynb_checkpoints/TextDataHandling-checkpoint.ipynb
-Deep Learning/Keras Techniques/.ipynb_checkpoints/CustomTrainingLoopExample-checkpoint.ipynb
-Deep Learning/Keras Techniques/model_viz.png
-.gitignore
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/oracle.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/tuner0.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_00/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_00/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_00/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_01/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_01/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_01/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_02/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_02/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_02/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_03/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_03/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_03/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_04/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_04/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_04/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_05/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_05/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_05/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_06/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_06/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_06/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_07/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_07/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_07/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_08/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_08/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_08/trial.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_09/build_config.json
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_09/checkpoint.weights.h5
-Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_09/trial.json
-Deep Learning/Keras Techniques/.ipynb_checkpoints/HyperparameterTuningWithKerasTunerExample-checkpoint.ipynb
-Deep Learning/Keras Techniques/files_generated_from_notebooks/model_viz.png
-Deep Learning/Keras Techniques/.ipynb_checkpoints/ModelOptimizationTechniques-checkpoint.ipynb
-Reinforcement Learning/.ipynb_checkpoints/OpenAIGymRLExample-checkpoint.ipynb
-Deep Learning/Building Advanced Transformers/TextDataHandling.ipynb
-Deep Learning/Building Advanced Transformers/TimeSeriesPrediction.ipynb
-Deep Learning/Keras Techniques/CustomTrainingLoopExample.ipynb
-Deep Learning/Keras Techniques/HyperparameterTuningWithKerasTunerExample.ipynb
-Deep Learning/Keras Techniques/ModelOptimizationTechniques.ipynb
-Deep Learning/RNNs/RNN_For_TimeSeries_Predictions.ipynb
-Deep Learning/Building Advanced Transformers/TextDataHandling.ipynb
-Deep Learning/Building Advanced Transformers/TimeSeriesPrediction.ipynb
-Deep Learning/Keras Techniques/CustomTrainingLoopExample.ipynb
-Deep Learning/Keras Techniques/HyperparameterTuningWithKerasTunerExample.ipynb
-Deep Learning/Keras Techniques/ModelOptimizationTechniques.ipynb
-Deep Learning/RNNs/RNN_For_TimeSeries_Predictions.ipynb
-Deep Learning/Building Advanced Transformers/TextDataHandling.ipynb
-Deep Learning/Building Advanced Transformers/TimeSeriesPrediction.ipynb
-Deep Learning/Keras Techniques/CustomTrainingLoopExample.ipynb
-Deep Learning/Keras Techniques/HyperparameterTuningWithKerasTunerExample.ipynb
-Deep Learning/Keras Techniques/ModelOptimizationTechniques.ipynb
-Deep Learning/RNNs/RNN_For_TimeSeries_Predictions.ipynb
-PyTorch/.ipynb_checkpoints/BasicTensorExamples-checkpoint.ipynb
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/model_viz.png
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/oracle.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/tuner0.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_00/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_00/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_00/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_01/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_01/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_01/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_02/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_02/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_02/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_03/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_03/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_03/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_04/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_04/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_04/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_05/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_05/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_05/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_06/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_06/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_06/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_07/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_07/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_07/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_08/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_08/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_08/trial.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_09/build_config.json
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_09/checkpoint.weights.h5
-Keras/Deep Learning/Keras Techniques/files_generated_from_notebooks/intro_to_kt/trial_09/trial.json
-Keras/Deep Learning/RNNs/RNN_For_TimeSeries_Predictions.ipynb
-Keras/Deep Learning/RNNs/.ipynb_checkpoints/RNN_For_TimeSeries_Predictions-checkpoint.ipynb
-Keras/Reinforcement Learning/OpenAIGymRLExample.ipynb
-Keras/Reinforcement Learning/.ipynb_checkpoints/OpenAIGymRLExample-checkpoint.ipynb
-Keras/Deep Learning/Building Advanced Transformers/TextDataHandling.ipynb
-Keras/Deep Learning/Building Advanced Transformers/TimeSeriesPrediction.ipynb
-Keras/Deep Learning/Building Advanced Transformers/.ipynb_checkpoints/TextDataHandling-checkpoint.ipynb
-Keras/Deep Learning/Building Advanced Transformers/.ipynb_checkpoints/TimeSeriesPrediction-checkpoint.ipynb
-Keras/Deep Learning/Keras Techniques/CustomTrainingLoopExample.ipynb
-Keras/Deep Learning/Keras Techniques/HyperparameterTuningWithKerasTunerExample.ipynb
-Keras/Deep Learning/Keras Techniques/ModelOptimizationTechniques.ipynb
-Keras/Deep Learning/Keras Techniques/.ipynb_checkpoints/CustomTrainingLoopExample-checkpoint.ipynb
-Keras/Deep Learning/Keras Techniques/.ipynb_checkpoints/HyperparameterTuningWithKerasTunerExample-checkpoint.ipynb
-Keras/Deep Learning/Keras Techniques/.ipynb_checkpoints/ModelOptimizationTechniques-checkpoint.ipynb
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Keras Tuner generated files
+**/files_generated_from_notebooks/intro_to_kt/
+**/files_generated_from_notebooks/model_viz.png
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
