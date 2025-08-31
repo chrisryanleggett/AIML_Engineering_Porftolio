@@ -7,20 +7,21 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 ## Project Structure
 
 ### `PyTorch/`
-| Notebook | Description |
-|----------|-------------|
-| `BasicTensorExamples.ipynb` | Introduction to PyTorch tensors, data types, and basic operations |
+| Notebook | Description | Screenshot |
+|----------|-------------|------------|
+| `BasicTensorExamples.ipynb` | Introduction to PyTorch tensors, data types, and basic operations | |
 
 ### `Keras/`
-| Notebook | Description |
-|----------|-------------|
-| `TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer |
-| `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting |
-| `CustomTrainingLoopExample.ipynb` | Implementation of custom training loops with callbacks |
-| `HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner |
-| `ModelOptimizationTechniques.ipynb` | Model optimization and performance enhancement strategies |
-| `RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting |
-| `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment |
+| Notebook | Description | Screenshot |
+|----------|-------------|------------|
+| `TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer | |
+| `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting | |
+| `CancerClassification.ipynb` | Deep learning model for breast cancer classification using histopathological images | ![Breast Cancer Classifier](Keras/Deep%20Learning/CancerClassification/ReadmeImage/BreastCancerClassifier.png) |
+| `CustomTrainingLoopExample.ipynb` | Implementation of custom training loops with callbacks | |
+| `HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner | |
+| `ModelOptimizationTechniques.ipynb` | Model optimization and performance enhancement strategies | |
+| `RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting | |
+| `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment | |
 
 ## Key Concepts Covered
 
@@ -31,6 +32,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 
 ### Keras Deep Learning
 - **Advanced Transformers**: Text vectorization, sequence processing, time series prediction
+- **Medical Image Classification**: Breast cancer classification using histopathological images
 - **Custom Training**: Manual training loops, custom callbacks, metric monitoring
 - **Model Optimization**: Hyperparameter tuning, performance optimization techniques
 - **RNNs**: Recurrent neural networks for sequential data processing
