@@ -22,7 +22,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 | `HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner | |
 | `ModelOptimizationTechniques.ipynb` | Model optimization and performance enhancement strategies | |
 | `RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting | |
-| `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment | |
+| `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment | ![OpenAI Gym](Keras/Reinforcement%20Learning/ReadmeImages/OpenAIGym.png) |
 
 ## Key Concepts Covered
 
