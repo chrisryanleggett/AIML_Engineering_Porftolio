@@ -9,7 +9,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 ### `PyTorch/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| `BasicTensorExamples.ipynb` | Introduction to PyTorch tensors, data types, and basic operations | |
+| `BasicTensorExamples.ipynb` | Introduction to PyTorch tensors, data types, and basic operations | ![Tensor Examples](PyTorch/ReadmeImages/TensorExamples.png) |
 | `HandwritingClassifier.ipynb` | Multi-class neural network with MNIST to classify hand-written digits using cross entropy function as the criterion for loss | ![MNIST Writing Detection](PyTorch/ReadmeImages/MNISTWritingDetection.png) |
 
 ### `Keras/`
