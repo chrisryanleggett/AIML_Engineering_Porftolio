@@ -10,6 +10,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
 | `BasicTensorExamples.ipynb` | Introduction to PyTorch tensors, data types, and basic operations | |
+| `HandwritingClassifier.ipynb` | Multi-class neural network with MNIST to classify hand-written digits using cross entropy function as the criterion for loss | ![MNIST Writing Detection](PyTorch/ReadmeImages/MNISTWritingDetection.png) |
 
 ### `Keras/`
 | Notebook | Description | Screenshot |
@@ -29,6 +30,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 - Tensor creation and manipulation
 - Data type management and conversion
 - Basic tensor operations and indexing
+- **Handwriting Classification**: Multi-class neural network for MNIST digit recognition using cross-entropy loss
 
 ### Keras Deep Learning
 - **Advanced Transformers**: Text vectorization, sequence processing, time series prediction
