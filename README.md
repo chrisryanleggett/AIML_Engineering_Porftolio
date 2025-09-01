@@ -16,7 +16,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
 | `TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer | |
-| `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting | |
+| `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting of stock market data | ![Stock Market Prediction](Keras/Deep%20Learning/Building%20Advanced%20Transformers/ReadmeImages/StockMarketPrediction.png) |
 | `CancerClassification.ipynb` | Deep learning model for breast cancer classification using histopathological images | ![Breast Cancer Classifier](Keras/Deep%20Learning/CancerClassification/ReadmeImage/BreastCancerClassifier.png) |
 | `CustomTrainingLoopExample.ipynb` | Implementation of custom training loops with callbacks | |
 | `HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner | |
