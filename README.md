@@ -15,6 +15,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 ### `Keras/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
+| `SatelliteClassification.ipynb` | Training a CNN classifier to differentiate and classify agricultural vs. non-agricultural land | ![Satellite Imagery](Keras/Deep%20Learning/SatelliteImageryClassifier/READMEImages/AgriImagery.png) |
 | `TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer | |
 | `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting of stock market data | ![Stock Market Prediction](Keras/Deep%20Learning/Building%20Advanced%20Transformers/ReadmeImages/StockMarketPrediction.png) |
 | `CancerClassification.ipynb` | Deep learning model for breast cancer classification using histopathological images | ![Breast Cancer Classifier](Keras/Deep%20Learning/CancerClassification/ReadmeImage/BreastCancerClassifier.png) |
@@ -22,7 +23,6 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 | `HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner | |
 | `ModelOptimizationTechniques.ipynb` | Model optimization and performance enhancement strategies | |
 | `RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting | |
-| `SatelliteClassification.ipynb` | Training a CNN classifier to differentiate and classify agricultural vs. non-agricultural land | ![Satellite Imagery](Keras/Deep%20Learning/SatelliteImageryClassifier/READMEImages/SatImagery.png) |
 | `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment | ![OpenAI Gym](Keras/Reinforcement%20Learning/ReadmeImages/OpenAIGym.png) |
 
 ## Key Concepts Covered
