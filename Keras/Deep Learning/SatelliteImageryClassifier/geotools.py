@@ -1,23 +1,34 @@
 """
-GeoTools to import dataset
+GeoTools 
 """
 
+import shutil
+import tarfile
+import zipfile
 import os
 from pathlib import Path
-from typing import Optional, Generator
 from urllib.parse import urlparse
+from typing import List, Union, Optional, Iterable, Generator
+from tqdm.auto import tqdm
 import asyncio
 
-# Exact constants 
+# Exact constants from skillsnetwork
 DEFAULT_CHUNK_SIZE = 8 << 10  # 8192 bytes
 
 class InvalidURLException(Exception):
+    """
+    Raised if URL is invalid.
+    """
     def __init__(self, url):
         self.url = url
         self.message = f"'{self.url}' is not a valid URL."
         super().__init__(self.message)
 
 def _is_url_valid(url: str) -> bool:
+    """
+    :param url: URL which is checked for validity.
+    :returns: True if url is valid URL, False otherwise.
+    """
     try:
         result = urlparse(url)
         # Assume it's a valid URL if a URL scheme and netloc are successfully parsed
@@ -33,6 +44,41 @@ def _is_jupyterlite() -> bool:
         return True
     except ImportError:
         return False
+
+def _rmrf(path: Path) -> None:
+    if path.is_dir():
+        shutil.rmtree(path)
+    else:
+        path.unlink()
+
+def _verify_files_dont_exist(paths: Iterable[Path], remove_if_exist: bool = False) -> None:
+    """
+    Verifies all paths in 'paths' don't exist.
+    :param paths: A iterable of pathlib.Path s.
+    :param remove_if_exist=False: Remove each file at each path in paths if they already exist.
+    :returns: None
+    :raises FileExistsError: On the first path found that already exists if remove_if_exist is False.
+    """
+    for path in paths:
+        # Could be a broken symlink => path.exists() is False
+        if path.exists() or path.is_symlink():
+            if remove_if_exist:
+                while path.is_symlink():
+                    temp = Path(os.readlink(path))
+                    path.unlink()
+                    path = temp
+                if path.exists():
+                    _rmrf(path)
+            else:
+                raise FileExistsError(f"Error: File '{path}' already exists.")
+
+def _is_file_to_symlink(path: Path) -> bool:
+    """
+    :param path: path to check.
+    :returns: True if file should be symlinked, False otherwise.
+    """
+    # Don't symlink "._" junk
+    return not (path.name.startswith("._") or path.name in ["__MACOSX"])
 
 async def _get_chunks(url: str, chunk_size: int) -> Generator[bytes, None, None]:
     """
@@ -57,9 +103,7 @@ async def _get_chunks(url: str, chunk_size: int) -> Generator[bytes, None, None]
             response = await fetch(url)
             reader = response.body.getReader()
             
-            # Try to import tqdm, fallback if not available
             try:
-                from tqdm import tqdm
                 pbar = tqdm(
                     mininterval=1,
                     desc=desc,
@@ -97,9 +141,7 @@ async def _get_chunks(url: str, chunk_size: int) -> Generator[bytes, None, None]
                         f"received status code {response.status_code} from '{url}'."
                     )
                 
-                # Try to import tqdm, fallback if not available
                 try:
-                    from tqdm import tqdm
                     pbar = tqdm(
                         miniters=1,
                         desc=desc,
@@ -150,6 +192,7 @@ async def download_dataset(
     verbose: bool = True,
     chunk_size: int = DEFAULT_CHUNK_SIZE,
 ) -> None:
+    """download()"""
     return await download(url, path, verbose, chunk_size)
 
 async def read(url: str, chunk_size: int = DEFAULT_CHUNK_SIZE) -> bytes:
@@ -158,12 +201,101 @@ async def read(url: str, chunk_size: int = DEFAULT_CHUNK_SIZE) -> bytes:
     """
     return b"".join([chunk async for chunk in _get_chunks(url, chunk_size)])
 
-# ============================================================================
-# STEP-BY-STEP IMPLEMENTATION GUIDE
-# ============================================================================
+async def prepare(
+    url: str, path: Optional[str] = None, verbose: bool = True, overwrite: bool = False
+) -> None:
+    """
+    Prepares a dataset for learners. Downloads a dataset from the given url,
+    decompresses it if necessary. If not using jupyterlite, will extract to
+    /tmp and and symlink it so it's available at the desired path.
 
-"""
-STEP 1: Save this code as 'geotools.py' in your notebook directory
+    :param url: The URL to download the dataset from.
+    :param path: The path the dataset will be available at. Current working directory by default.
+    :param verbose=True: Prints saved path if True.
+    :param overwrite=False: If True, overwrites any existing files at destination.
+    :raise InvalidURLException: When URL is invalid.
+    :raise FileExistsError: When a file to be symlinked already exists and overwrite is False.
+    :raise ValueError: When requested path is in /tmp, or cannot be saved to path.
+    """
+    filename = Path(urlparse(url).path).name
+    path = Path.cwd() if path is None else Path(path)
+    # Check if path contains /tmp
+    if Path("/tmp") in path.parents:
+        raise ValueError("path must not be in /tmp.")
+    elif path.is_file():
+        raise ValueError("Datasets must be prepared to directories, not files.")
+    # Create the target path if it doesn't exist yet
+    path.mkdir(exist_ok=True)
 
-STEP 2: In your main notebook, use the import
-"""
+    # For avoiding collisions with any other files the user may have downloaded to /tmp/
+    dname = f"skills-network-{hash(url)}"
+    # The file to extract data to. If not jupyterlite, to be symlinked to as well
+    extract_dir = path if _is_jupyterlite() else Path(f"/tmp/{dname}")
+    # The file to download the (possibly) compressed data to
+    tmp_download_file = Path(f"/tmp/{dname}-{filename}")
+    # Download the dataset to tmp_download_file file
+    # File will be overwritten if it already exists
+    await download(url, tmp_download_file, verbose=False)
+
+    # Delete extract_dir directory if it already exists
+    if not _is_jupyterlite():
+        if extract_dir.is_dir():
+            shutil.rmtree(extract_dir)
+        extract_dir.mkdir()
+
+    try:
+        if tarfile.is_tarfile(tmp_download_file):
+            with tarfile.open(tmp_download_file) as tf:
+                _verify_files_dont_exist(
+                    [
+                        path / child.name
+                        for child in map(Path, tf.getnames())
+                        if len(child.parents) == 1 and _is_file_to_symlink(child)
+                    ],  # Only check if top-level fileobject
+                    remove_if_exist=overwrite,
+                )
+                pbar = tqdm(iterable=tf.getmembers(), total=len(tf.getmembers()))
+                pbar.set_description(f"Extracting {filename}")
+                for member in pbar:
+                    tf.extract(member=member, path=extract_dir)
+            tmp_download_file.unlink()
+        elif zipfile.is_zipfile(tmp_download_file):
+            with zipfile.ZipFile(tmp_download_file) as zf:
+                _verify_files_dont_exist(
+                    [
+                        path / child.name
+                        for child in map(Path, zf.namelist())
+                        if len(child.parents) == 1 and _is_file_to_symlink(child)
+                    ],  # Only check if top-level fileobject
+                    remove_if_exist=overwrite,
+                )
+                pbar = tqdm(iterable=zf.infolist(), total=len(zf.infolist()))
+                pbar.set_description(f"Extracting {filename}")
+                for member in pbar:
+                    zf.extract(member=member, path=extract_dir)
+            tmp_download_file.unlink()
+        else:
+            _verify_files_dont_exist([path / filename], remove_if_exist=overwrite)
+            shutil.move(tmp_download_file, extract_dir / filename)
+    except FileExistsError as e:
+        raise FileExistsError(
+            str(e)
+            + "\nIf you want to overwrite any existing files, use prepare(..., overwrite=True)."
+        ) from None
+
+    # If in jupyterlite environment, the extract_dir = path, so the files are already there.
+    if not _is_jupyterlite():
+        # If not in jupyterlite environment, symlink top-level file objects in extract_dir
+        for child in filter(_is_file_to_symlink, extract_dir.iterdir()):
+            if (path / child.name).is_symlink() and overwrite:
+                (path / child.name).unlink()
+            (path / child.name).symlink_to(child, target_is_directory=child.is_dir())
+
+    if verbose:
+        print(f"Saved to '{os.path.relpath(path.resolve())}'")
+
+async def prepare_dataset(
+    url: str, path: Optional[str] = None, verbose: bool = True, overwrite: bool = False
+) -> None:
+    """prepare() to maintain API compatibility"""
+    return await prepare(url, path, verbose, overwrite)
