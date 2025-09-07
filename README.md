@@ -9,21 +9,24 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 ### `PyTorch/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| `BasicTensorExamples.ipynb` | Introduction to PyTorch tensors, data types, and basic operations | ![Tensor Examples](PyTorch/ReadmeImages/TensorExamples.png) |
-| `HandwritingClassifier.ipynb` | Multi-class neural network with MNIST to classify hand-written digits using cross entropy function as the criterion for loss | ![MNIST Writing Detection](PyTorch/ReadmeImages/MNISTWritingDetection.png) |
+| `BasicTensorExamples.ipynb` | Introduction to PyTorch tensors, data types, and basic operations | ![Tensor Examples](PyTorch%20examples/ReadmeImages/TensorExamples.png) |
+| `HandwritingClassifier.ipynb` | Multi-class neural network with MNIST to classify hand-written digits using cross entropy function as the criterion for loss | ![MNIST Writing Detection](PyTorch%20examples/ReadmeImages/MNISTWritingDetection.png) |
 
 ### `Keras/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| `SatelliteClassification.ipynb` | Training a CNN classifier to differentiate and classify agricultural vs. non-agricultural land | ![Satellite Imagery](Keras/Deep%20Learning/SatelliteImageryClassifier/READMEImages/AgriImagery.png) |
+| `SatelliteClassification.ipynb` | Training a CNN classifier to differentiate and classify agricultural vs. non-agricultural land | ![Satellite Imagery](Keras%20examples/Deep%20Learning/SatelliteImageryClassifier/READMEImages/AgriImagery.png) |
 | `TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer | |
-| `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting of stock market data | ![Stock Market Prediction](Keras/Deep%20Learning/Building%20Advanced%20Transformers/ReadmeImages/StockMarketPrediction.png) |
-| `CancerClassification.ipynb` | Deep learning model for breast cancer classification using histopathological images | ![Breast Cancer Classifier](Keras/Deep%20Learning/CancerClassification/ReadmeImage/BreastCancerClassifier.png) |
+| `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting of stock market data | ![Stock Market Prediction](Keras%20examples/Deep%20Learning/Building%20Advanced%20Transformers/ReadmeImages/StockMarketPrediction.png) |
+| `CancerClassification.ipynb` | Deep learning model for breast cancer classification using histopathological images | ![Breast Cancer Classifier](Keras%20examples/Deep%20Learning/CancerClassification/ReadmeImage/BreastCancerClassifier.png) |
 | `CustomTrainingLoopExample.ipynb` | Implementation of custom training loops with callbacks | |
 | `HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner | |
 | `ModelOptimizationTechniques.ipynb` | Model optimization and performance enhancement strategies | |
 | `RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting | |
-| `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment | ![OpenAI Gym](Keras/Reinforcement%20Learning/ReadmeImages/OpenAIGym.png) |
+| `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment | ![OpenAI Gym](Keras%20examples/Reinforcement%20Learning/ReadmeImages/OpenAIGym.png) |
+
+### `Generative AI and LLM examples/`
+Coming soon
 
 ## Key Concepts Covered
 
