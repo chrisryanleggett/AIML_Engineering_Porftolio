@@ -28,7 +28,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 ### `Generative AI and LLM examples/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| `DocumentClassifier.ipynb` | Neural network text classifier using PyTorch and TorchText for AG_NEWS dataset categorization with EmbeddingBag architecture | |
+| `DocumentClassifier.ipynb` | Neural network text classifier using PyTorch and TorchText for AG_NEWS dataset categorization with EmbeddingBag architecture | ![Document Classifier](Generative%20AI%20and%20LLM%20examples/ReadmeImages/AccuracyLoss.png) |
 
 ## Key Concepts Covered
 
