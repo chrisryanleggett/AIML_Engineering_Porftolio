@@ -26,7 +26,9 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 | `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment | ![OpenAI Gym](Keras%20examples/Reinforcement%20Learning/ReadmeImages/OpenAIGym.png) |
 
 ### `Generative AI and LLM examples/`
-Coming soon
+| Notebook | Description | Screenshot |
+|----------|-------------|------------|
+| `DocumentClassifier.ipynb` | Neural network text classifier using PyTorch and TorchText for AG_NEWS dataset categorization with EmbeddingBag architecture | |
 
 ## Key Concepts Covered
 
@@ -48,6 +50,12 @@ Coming soon
 - OpenAI Gymnasium environment integration
 - Experience replay and target network implementation
 - Exploration vs exploitation strategies
+
+### Generative AI and LLM
+- **Document Classification**: Text preprocessing, tokenization, and vocabulary building with TorchText
+- **Neural Text Processing**: EmbeddingBag architecture for efficient text representation
+- **Multi-class Classification**: Cross-entropy loss optimization for news article categorization
+- **Real-world NLP Pipeline**: End-to-end implementation from data loading to model inference
 
 ## Getting Started
 
