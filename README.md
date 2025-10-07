@@ -29,6 +29,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
 | `DocumentClassifier.ipynb` | Neural network text classifier using PyTorch and TorchText for AG_NEWS dataset categorization with EmbeddingBag architecture | ![Document Classifier](Generative%20AI%20and%20LLM%20examples/ReadmeImages/DocClassifier.png) |
+| `MachineTranslation.ipynb` | Sequence-to-sequence RNN model for German-to-English translation using PyTorch, Multi30K dataset, and encoder-decoder architecture with LSTM | |
 
 ## Key Concepts Covered
 
@@ -56,6 +57,9 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 - **Neural Text Processing**: EmbeddingBag architecture for efficient text representation
 - **Multi-class Classification**: Cross-entropy loss optimization for news article categorization
 - **Real-world NLP Pipeline**: End-to-end implementation from data loading to model inference
+- **Machine Translation**: Sequence-to-sequence RNN models with encoder-decoder architecture for language translation
+- **LSTM Networks**: Bidirectional processing for context understanding and sequence generation
+- **Teacher Forcing**: Training strategy balancing ground truth and model predictions during sequence generation
 
 ## Getting Started
 
