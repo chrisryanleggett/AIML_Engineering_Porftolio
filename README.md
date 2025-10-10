@@ -34,7 +34,7 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 ### `General Statistics/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| `PlottingExamples.ipynb` | MatPlotLib plotting examples demonstrating histograms, pie charts, and dot plots for descriptive statistics and data visualization | |
+| `PlottingExamples.ipynb` | MatPlotLib plotting examples demonstrating histograms, pie charts, and dot plots for descriptive statistics and data visualization | ![Scatter Plot](General%20statistics/ReadMeImages/scatterplt.png) ![Whisker Plot](General%20statistics/ReadMeImages/whiskerPlot.png) |
 
 ## Key Concepts Covered
 
