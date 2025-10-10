@@ -31,6 +31,11 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 | `DocumentClassifier.ipynb` | Neural network text classifier using PyTorch and TorchText for AG_NEWS dataset categorization with EmbeddingBag architecture | ![Document Classifier](Generative%20AI%20and%20LLM%20examples/ReadmeImages/DocClassifier.png) |
 | `MachineTranslation.ipynb` | Sequence-to-sequence RNN model for German-to-English translation using PyTorch, Multi30K dataset, and encoder-decoder architecture with LSTM | |
 
+### `General Statistics/`
+| Notebook | Description | Screenshot |
+|----------|-------------|------------|
+| `PlottingExamples.ipynb` | MatPlotLib plotting examples demonstrating histograms, pie charts, and dot plots for descriptive statistics and data visualization | |
+
 ## Key Concepts Covered
 
 ### PyTorch
@@ -60,6 +65,12 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 - **Machine Translation**: Sequence-to-sequence RNN models with encoder-decoder architecture for language translation
 - **LSTM Networks**: Bidirectional processing for context understanding and sequence generation
 - **Teacher Forcing**: Training strategy balancing ground truth and model predictions during sequence generation
+
+### General Statistics
+- **Data Visualization**: MatPlotLib plotting techniques for descriptive statistics
+- **Histogram Analysis**: Frequency distribution visualization for continuous data
+- **Categorical Data Visualization**: Pie charts and dot plots for comparing categories
+- **Statistical Plotting**: Foundation techniques for data exploration and analysis
 
 ## Getting Started
 
