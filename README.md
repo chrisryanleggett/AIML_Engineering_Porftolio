@@ -36,6 +36,9 @@ A comprehensive collection of Jupyter notebooks demonstrating key concepts and p
 |----------|-------------|------------|
 | `PlottingExamples.ipynb` | MatPlotLib plotting examples demonstrating histograms, pie charts, and dot plots for descriptive statistics and data visualization | ![Scatter Plot](4-%20General%20statistics/ReadMeImages/scatterplt.png) ![Whisker Plot](4-%20General%20statistics/ReadMeImages/whiskerPlot.png) |
 
+### `Concurrent Programming and CUDA/`
+This directory contains CUDA GPU programming examples (vector operations, matrix multiplication, reduction) and concurrency pattern implementations (MapReduce, Repository pattern) to demonstrate parallel computing techniques for maximizing CPU/GPU utilization in high-performance computing scenarios.
+
 ## Key Concepts Covered
 
 ### PyTorch
