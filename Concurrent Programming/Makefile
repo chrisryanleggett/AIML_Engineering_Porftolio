@@ -5,10 +5,10 @@ CXXFLAGS=-I$(IDIR)
 .PHONY: clean build
 
 clean:
-	rm -f assignment.exe
+	rm -f auth.exe
 
 build: *.cpp
-	$(CXX) -o assignment.exe $(CXXFLAGS) *.cpp
+	$(CXX) -o auth.exe $(CXXFLAGS) *.cpp
 
 run:
-	./assignment.exe $(ARGS)
+	./auth.exe $(ARGS)
