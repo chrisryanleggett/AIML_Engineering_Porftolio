@@ -58,6 +58,105 @@ Each example follows CUDA best practices:
 
 **Use Case**: Common pattern for aggregating results (sum, max, min) across large datasets.
 
+### 4. [Driver API Example](./driver_api_example/main.cu)
+
+**Purpose**: Demonstrates the CUDA Driver API, providing lower-level control over GPU execution compared to the Runtime API.
+
+**Key Concepts**:
+- Explicit initialization with `cuInit()`
+- Manual device selection with `cuDeviceGet()`
+- Context creation and management with `cuCtxCreate()`
+- Module loading from PTX or `.cubin` files with `cuModuleLoadDataEx()`
+- Kernel function retrieval with `cuModuleGetFunction()`
+- Explicit kernel launch with `cuLaunchKernel()`
+
+**Use Case**: Essential for understanding CUDA software architecture, integrating CUDA into non-C++ languages, and applications requiring fine-grained GPU control.
+
+**Why Included**: This example demonstrates the lower-level Driver API that sits beneath the Runtime API. Understanding both APIs is crucial for developers working with language bindings (Python, Java), multi-GPU applications, or dynamic kernel loading scenarios.
+
+## Runtime API vs Driver API
+
+The CUDA software stack provides two APIs for GPU programming, each with distinct advantages:
+
+### Runtime API (Examples 1-3: vector_add, matrix_multiply, reduction)
+
+The **Runtime API** is a higher-level abstraction that simplifies GPU programming:
+
+- **Automatic Initialization**: No need to call `cuInit()` - initialization happens automatically
+- **Simplified Context Management**: Contexts are created and managed automatically
+- **All Kernels Available**: After compilation, all kernels in your code are immediately available
+- **Requires C++ Compilation**: Code must be compiled with `nvcc` as C++ code
+- **Simpler Syntax**: Cleaner, more intuitive API calls (`cudaMalloc`, `cudaMemcpy`, etc.)
+
+**Best For**: Most CUDA applications, especially when developing in C++ and when simplicity is preferred.
+
+**Example Pattern**:
+```cpp
+// Automatic initialization - no setup needed
+cudaMalloc(&d_a, size);                    // Allocate device memory
+cudaMemcpy(d_a, h_a, size, ...);          // Transfer data
+vectorAdd<<<blocks, threads>>>(...);      // Launch kernel
+cudaMemcpy(h_c, d_c, size, ...);          // Copy results back
+```
+
+### Driver API (Example 4: driver_api_example)
+
+The **Driver API** provides lower-level control and flexibility:
+
+- **Manual Initialization**: Must explicitly call `cuInit()` to initialize the driver
+- **Explicit Context Management**: You create and manage contexts with `cuCtxCreate()`
+- **Module Loading Required**: Kernels must be loaded from PTX or `.cubin` files using `cuModuleLoadDataEx()`
+- **Language Agnostic**: Can be used from any language that can link `.cubin` objects (Python, Java, C, etc.)
+- **More Control**: Fine-grained control over devices, contexts, and kernel execution
+
+**Best For**: 
+- Language bindings (PyCUDA, JCuda, etc.)
+- Multi-GPU applications with complex context switching
+- Dynamic kernel loading from pre-compiled binaries
+- Applications requiring explicit resource management
+
+**Example Pattern**:
+```cpp
+cuInit(0);                                 // Explicit initialization
+cuDeviceGet(&device, 0);                   // Get device handle
+cuCtxCreate(&context, 0, device);           // Create context
+cuModuleLoadDataEx(&module, ptx, ...);      // Load module
+cuModuleGetFunction(&kernel, module, ...);  // Get kernel function
+cuMemAlloc(&d_a, size);                     // Allocate device memory
+cuLaunchKernel(kernel, ...);                // Launch kernel
+cuCtxDestroy(context);                      // Cleanup context
+```
+
+### When to Use Which API?
+
+| Scenario | Recommended API |
+|----------|----------------|
+| Standard C++ CUDA development | **Runtime API** |
+| Python/Java/other language bindings | **Driver API** |
+| Simple GPU applications | **Runtime API** |
+| Multi-GPU with context switching | **Driver API** |
+| Dynamic kernel loading | **Driver API** |
+| Learning CUDA fundamentals | **Runtime API** (start here) |
+| Building high-performance libraries | **Driver API** |
+
+### Understanding the CUDA Software Stack
+
+```
+┌─────────────────────────────────────┐
+│   Your Application Code             │
+├─────────────────────────────────────┤
+│   Runtime API (cudaMalloc, etc.)   │  ← Examples 1-3
+│   OR                                │
+│   Driver API (cuInit, cuCtx, etc.) │  ← Example 4
+├─────────────────────────────────────┤
+│   CUDA Driver                       │
+├─────────────────────────────────────┤
+│   GPU Hardware                      │
+└─────────────────────────────────────┘
+```
+
+The Runtime API is built on top of the Driver API, providing a simpler interface while the Driver API offers direct access to lower-level functionality.
+
 ## Compilation & Execution
 
 ### Prerequisites
@@ -140,6 +239,8 @@ Reduction (10M elements):
 ✅ Performance optimization techniques  
 ✅ Thread hierarchy understanding (grid → block → thread)  
 ✅ Error handling and debugging  
+✅ Runtime API vs Driver API understanding  
+✅ CUDA software architecture layers  
 
 ## Hardware Used
 
