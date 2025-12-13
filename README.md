@@ -1,6 +1,6 @@
 # AI/ML Engineering Portfolio
 
-A comprehensive collection of Jupyter notebooks demonstrating key concepts and practical implementations in Artificial Intelligence and Machine Learning. This portfolio showcases hands-on experience with PyTorch and Keras frameworks, covering fundamental concepts to advanced techniques including deep learning, reinforcement learning, and transformer architectures.
+A comprehensive collection of code examples and Jupyter notebooks demonstrating key concepts and practical implementations in Artificial Intelligence and Machine Learning. This portfolio showcases hands-on experience with PyTorch and Keras frameworks, covering fundamental concepts to advanced techniques including deep learning, reinforcement learning, and transformer architectures.
 
 
 
