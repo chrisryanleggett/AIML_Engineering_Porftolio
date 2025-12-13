@@ -42,3 +42,4 @@ Examples covering:
 Examples demonstrating:
 - Creating pools with `Pool(n)`
 - Using functional methods like `map()` to distribute work across spawned processes
+

@@ -126,3 +126,4 @@ Compare this example with `../vector_add/main.cu` to see the differences:
 - [CUDA Driver API Documentation](https://docs.nvidia.com/cuda/cuda-driver-api/)
 - [CUDA Programming Guide - Driver API](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#driver-api)
 - Compare with Runtime API examples in `../vector_add/`, `../matrix_multiply/`, `../reduction/`
+
