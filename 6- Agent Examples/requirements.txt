@@ -1,1 +1,4 @@
+# Requires Python 3.10+
 python-dotenv
+litellm
+jupyter
