@@ -4,7 +4,7 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 
 
 
-## Project Structure
+## Project Examples
 
 ### `PyTorch/`
 | Notebook | Description | Screenshot |
