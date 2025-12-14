@@ -16,7 +16,7 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
 | `SatelliteClassification.ipynb` | Training a CNN classifier to differentiate and classify agricultural vs. non-agricultural land | ![Satellite Imagery](2%20-%20Keras%20examples/Deep%20Learning/SatelliteImageryClassifier/READMEImages/AgriImagery.png) |
-| `TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer | |
+| `TextDataHandling.ipynb` | Text preprocessing with TensorFlow TextVectorization layer | ![Text Analysis](3%20-%20PyTorch%20examples/ReadmeImages/Text%20Analysis.webp) |
 | `TimeSeriesPrediction.ipynb` | Advanced transformer-based time series forecasting of stock market data | ![Stock Market Prediction](2%20-%20Keras%20examples/Deep%20Learning/Building%20Advanced%20Transformers/ReadmeImages/StockMarketPrediction.png) |
 | `CancerClassification.ipynb` | Deep learning model for breast cancer classification using histopathological images | ![Breast Cancer Classifier](2%20-%20Keras%20examples/Deep%20Learning/CancerClassification/ReadmeImage/BreastCancerClassifier.png) |
 | `CustomTrainingLoopExample.ipynb` | Implementation of custom training loops with callbacks | |
