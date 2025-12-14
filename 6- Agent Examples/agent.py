@@ -18,3 +18,7 @@ if api_key and api_key.startswith('sk-'):
     print("Success")
 else:
     print("API key not found or invalid format")
+
+
+
+    
