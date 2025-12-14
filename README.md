@@ -37,10 +37,20 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 | `PlottingExamples.ipynb` | MatPlotLib plotting examples demonstrating histograms, pie charts, and dot plots for descriptive statistics and data visualization | ![Scatter Plot](4-%20General%20statistics/ReadMeImages/scatterplt.png) ![Whisker Plot](4-%20General%20statistics/ReadMeImages/whiskerPlot.png) |
 
 ### `Concurrent Programming and CUDA/`
-This directory contains CUDA GPU programming examples (vector operations, matrix multiplication, reduction) and concurrency pattern implementations (MapReduce, Repository pattern) to demonstrate parallel computing techniques for maximizing CPU/GPU utilization in high-performance computing scenarios.
+| File/Directory | Description | Screenshot |
+|----------------|-------------|------------|
+| `CUDA/vector_add/` | CUDA kernel implementation for parallel vector addition on GPU | |
+| `CUDA/matrix_multiply/` | GPU-accelerated matrix multiplication using CUDA | |
+| `concurrency_pattern_examples/MapReduce/wordcount.py` | MapReduce pattern implementation for distributed word counting | |
+| `concurrency_pattern_examples/Repository/repository_pattern.py` | Repository pattern for thread-safe data access | |
 
 ### `Agentic AI/`
-Demonstrations of AI agent implementations and tooling setup including LiteLLM integration, environment configuration, and foundational agent development patterns. *(Under development)*
+| Notebook | Description | Screenshot |
+|----------|-------------|------------|
+| `StarterAgentNotebook.ipynb` | Foundational agent implementation and development patterns | |
+| `Environment and LiteLLM Setup.ipynb` | Configuration for LiteLLM integration and agent tooling | |
+
+*(Under development)*
 
 ## Key Concepts Covered
 
