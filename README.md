@@ -15,40 +15,40 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 ### `Keras/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| [`SatelliteClassification.ipynb`](2%20-%20Keras%20examples/Deep%20Learning/SatelliteImageryClassifier/SatelliteClassification.ipynb) | Training a CNN classifier to differentiate and classify agricultural vs. non-agricultural land | ![Satellite Imagery](2%20-%20Keras%20examples/Deep%20Learning/SatelliteImageryClassifier/READMEImages/AgriImagery.png) |
-| [`TextDataHandling.ipynb`](2%20-%20Keras%20examples/Deep%20Learning/Building%20Advanced%20Transformers/TextDataHandling.ipynb) | Text preprocessing with TensorFlow TextVectorization layer | ![Text Analysis](3%20-%20PyTorch%20examples/ReadmeImages/Text%20Analysis.webp) |
-| [`TimeSeriesPrediction.ipynb`](2%20-%20Keras%20examples/Deep%20Learning/Building%20Advanced%20Transformers/TimeSeriesPrediction.ipynb) | Advanced transformer-based time series forecasting of stock market data | ![Stock Market Prediction](2%20-%20Keras%20examples/Deep%20Learning/Building%20Advanced%20Transformers/ReadmeImages/StockMarketPrediction.png) |
-| [`CancerClassification.ipynb`](2%20-%20Keras%20examples/Deep%20Learning/CancerClassification/CancerClassification.ipynb) | Deep learning model for breast cancer classification using histopathological images | ![Breast Cancer Classifier](2%20-%20Keras%20examples/Deep%20Learning/CancerClassification/ReadmeImage/BreastCancerClassifier.png) |
-| [`CustomTrainingLoopExample.ipynb`](2%20-%20Keras%20examples/Deep%20Learning/Keras%20Techniques/CustomTrainingLoopExample.ipynb) | Implementation of custom training loops with callbacks | |
-| [`HyperparameterTuningWithKerasTunerExample.ipynb`](2%20-%20Keras%20examples/Deep%20Learning/Keras%20Techniques/HyperparameterTuningWithKerasTunerExample.ipynb) | Automated hyperparameter optimization using Keras Tuner | |
-| [`ModelOptimizationTechniques.ipynb`](2%20-%20Keras%20examples/Deep%20Learning/Keras%20Techniques/ModelOptimizationTechniques.ipynb) | Model optimization and performance enhancement strategies | |
-| [`RNN_For_TimeSeries_Predictions.ipynb`](2%20-%20Keras%20examples/Deep%20Learning/RNNs/RNN_For_TimeSeries_Predictions.ipynb) | Recurrent Neural Networks for time series forecasting | ![TimeSeries Prediction](3%20-%20PyTorch%20examples/ReadmeImages/TimeSeries%20Prediction.png) |
-| [`OpenAIGymRLExample.ipynb`](2%20-%20Keras%20examples/Reinforcement%20Learning/OpenAIGymRLExample.ipynb) | Deep Q-Network (DQN) implementation with CartPole environment | ![OpenAI Gym](2%20-%20Keras%20examples/Reinforcement%20Learning/ReadmeImages/OpenAIGym.png) |
+| [SatelliteClassification.ipynb](2%20-%20Keras%20examples/Deep%20Learning/SatelliteImageryClassifier/SatelliteClassification.ipynb) | Training a CNN classifier to differentiate and classify agricultural vs. non-agricultural land | ![Satellite Imagery](2%20-%20Keras%20examples/Deep%20Learning/SatelliteImageryClassifier/READMEImages/AgriImagery.png) |
+| [TextDataHandling.ipynb](2%20-%20Keras%20examples/Deep%20Learning/Building%20Advanced%20Transformers/TextDataHandling.ipynb) | Text preprocessing with TensorFlow TextVectorization layer | ![Text Analysis](3%20-%20PyTorch%20examples/ReadmeImages/Text%20Analysis.webp) |
+| [TimeSeriesPrediction.ipynb](2%20-%20Keras%20examples/Deep%20Learning/Building%20Advanced%20Transformers/TimeSeriesPrediction.ipynb) | Advanced transformer-based time series forecasting of stock market data | ![Stock Market Prediction](2%20-%20Keras%20examples/Deep%20Learning/Building%20Advanced%20Transformers/ReadmeImages/StockMarketPrediction.png) |
+| [CancerClassification.ipynb](2%20-%20Keras%20examples/Deep%20Learning/CancerClassification/CancerClassification.ipynb) | Deep learning model for breast cancer classification using histopathological images | ![Breast Cancer Classifier](2%20-%20Keras%20examples/Deep%20Learning/CancerClassification/ReadmeImage/BreastCancerClassifier.png) |
+| [CustomTrainingLoopExample.ipynb](2%20-%20Keras%20examples/Deep%20Learning/Keras%20Techniques/CustomTrainingLoopExample.ipynb) | Implementation of custom training loops with callbacks | |
+| [HyperparameterTuningWithKerasTunerExample.ipynb](2%20-%20Keras%20examples/Deep%20Learning/Keras%20Techniques/HyperparameterTuningWithKerasTunerExample.ipynb) | Automated hyperparameter optimization using Keras Tuner | |
+| [ModelOptimizationTechniques.ipynb](2%20-%20Keras%20examples/Deep%20Learning/Keras%20Techniques/ModelOptimizationTechniques.ipynb) | Model optimization and performance enhancement strategies | |
+| [RNN_For_TimeSeries_Predictions.ipynb](2%20-%20Keras%20examples/Deep%20Learning/RNNs/RNN_For_TimeSeries_Predictions.ipynb) | Recurrent Neural Networks for time series forecasting | ![TimeSeries Prediction](3%20-%20PyTorch%20examples/ReadmeImages/TimeSeries%20Prediction.png) |
+| [OpenAIGymRLExample.ipynb](2%20-%20Keras%20examples/Reinforcement%20Learning/OpenAIGymRLExample.ipynb) | Deep Q-Network (DQN) implementation with CartPole environment | ![OpenAI Gym](2%20-%20Keras%20examples/Reinforcement%20Learning/ReadmeImages/OpenAIGym.png) |
 
 ### `Generative AI and LLM examples/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| [`DocumentClassifier.ipynb`](1%20-%20Generative%20AI%20and%20LLM%20examples/DocumentClassifier.ipynb) | Neural network text classifier using PyTorch and TorchText for AG_NEWS dataset categorization with EmbeddingBag architecture | ![Document Classifier](1%20-%20Generative%20AI%20and%20LLM%20examples/ReadmeImages/DocClassifier.png) |
-| [`MachineTranslation.ipynb`](1%20-%20Generative%20AI%20and%20LLM%20examples/MachineTranslation.ipynb) | Sequence-to-sequence RNN model for German-to-English translation using PyTorch, Multi30K dataset, and encoder-decoder architecture with LSTM | ![Translation](3%20-%20PyTorch%20examples/ReadmeImages/Translation.png) |
+| [DocumentClassifier.ipynb](1%20-%20Generative%20AI%20and%20LLM%20examples/DocumentClassifier.ipynb) | Neural network text classifier using PyTorch and TorchText for AG_NEWS dataset categorization with EmbeddingBag architecture | ![Document Classifier](1%20-%20Generative%20AI%20and%20LLM%20examples/ReadmeImages/DocClassifier.png) |
+| [MachineTranslation.ipynb](1%20-%20Generative%20AI%20and%20LLM%20examples/MachineTranslation.ipynb) | Sequence-to-sequence RNN model for German-to-English translation using PyTorch, Multi30K dataset, and encoder-decoder architecture with LSTM | ![Translation](3%20-%20PyTorch%20examples/ReadmeImages/Translation.png) |
 
 ### `General Statistics/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| [`PlottingExamples.ipynb`](4-%20General%20statistics/PlottingExamples.ipynb) | MatPlotLib plotting examples demonstrating histograms, pie charts, and dot plots for descriptive statistics and data visualization | ![Scatter Plot](4-%20General%20statistics/ReadMeImages/scatterplt.png) ![Whisker Plot](4-%20General%20statistics/ReadMeImages/whiskerPlot.png) |
+| [PlottingExamples.ipynb](4-%20General%20statistics/PlottingExamples.ipynb) | MatPlotLib plotting examples demonstrating histograms, pie charts, and dot plots for descriptive statistics and data visualization | ![Scatter Plot](4-%20General%20statistics/ReadMeImages/scatterplt.png) ![Whisker Plot](4-%20General%20statistics/ReadMeImages/whiskerPlot.png) |
 
 ### `Concurrent Programming and CUDA/`
 | File/Directory | Description | Screenshot |
 |----------------|-------------|------------|
-| [`CUDA/vector_add/`](5-%20Concurrent%20Programming/CUDA/vector_add/) | CUDA kernel implementation for parallel vector addition on GPU | |
-| [`CUDA/matrix_multiply/`](5-%20Concurrent%20Programming/CUDA/matrix_multiply/) | GPU-accelerated matrix multiplication using CUDA | |
-| [`concurrency_pattern_examples/MapReduce/wordcount.py`](5-%20Concurrent%20Programming/concurrency_pattern_examples/MapReduce/wordcount.py) | MapReduce pattern implementation for distributed word counting | |
-| [`concurrency_pattern_examples/Repository/repository_pattern.py`](5-%20Concurrent%20Programming/concurrency_pattern_examples/Repository/repository_pattern.py) | Repository pattern for thread-safe data access | |
+| [CUDA/vector_add/](5-%20Concurrent%20Programming/CUDA/vector_add/) | CUDA kernel implementation for parallel vector addition on GPU | |
+| [CUDA/matrix_multiply/](5-%20Concurrent%20Programming/CUDA/matrix_multiply/) | GPU-accelerated matrix multiplication using CUDA | |
+| [concurrency_pattern_examples/MapReduce/wordcount.py](5-%20Concurrent%20Programming/concurrency_pattern_examples/MapReduce/wordcount.py) | MapReduce pattern implementation for distributed word counting | |
+| [concurrency_pattern_examples/Repository/repository_pattern.py](5-%20Concurrent%20Programming/concurrency_pattern_examples/Repository/repository_pattern.py) | Repository pattern for thread-safe data access | |
 
 ### `Agentic AI/`
 | Notebook | Description | Screenshot |
 |----------|-------------|------------|
-| [`StarterAgentNotebook.ipynb`](6-%20Agent%20Examples/StarterAgentNotebook.ipynb) | Foundational agent implementation and development patterns | |
-| [`Environment and LiteLLM Setup.ipynb`](6-%20Agent%20Examples/Environment%20and%20LiteLLM%20Setup.ipynb) | Configuration for LiteLLM integration and agent tooling | |
+| [StarterAgentNotebook.ipynb](6-%20Agent%20Examples/StarterAgentNotebook.ipynb) | Foundational agent implementation and development patterns | |
+| [Environment and LiteLLM Setup.ipynb](6-%20Agent%20Examples/Environment%20and%20LiteLLM%20Setup.ipynb) | Configuration for LiteLLM integration and agent tooling | |
 
 *(Under development)*
 
