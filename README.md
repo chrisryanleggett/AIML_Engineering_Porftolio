@@ -39,6 +39,9 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 ### `Concurrent Programming and CUDA/`
 This directory contains CUDA GPU programming examples (vector operations, matrix multiplication, reduction) and concurrency pattern implementations (MapReduce, Repository pattern) to demonstrate parallel computing techniques for maximizing CPU/GPU utilization in high-performance computing scenarios.
 
+### `Agentic AI/`
+Demonstrations of AI agent implementations and tooling setup including LiteLLM integration, environment configuration, and foundational agent development patterns. *(Under development)*
+
 ## Key Concepts Covered
 
 ### PyTorch
