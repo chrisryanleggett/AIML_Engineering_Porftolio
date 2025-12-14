@@ -22,7 +22,7 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 | `CustomTrainingLoopExample.ipynb` | Implementation of custom training loops with callbacks | |
 | `HyperparameterTuningWithKerasTunerExample.ipynb` | Automated hyperparameter optimization using Keras Tuner | |
 | `ModelOptimizationTechniques.ipynb` | Model optimization and performance enhancement strategies | |
-| `RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting | |
+| `RNN_For_TimeSeries_Predictions.ipynb` | Recurrent Neural Networks for time series forecasting | ![TimeSeries Prediction](3%20-%20PyTorch%20examples/ReadmeImages/TimeSeries%20Prediction.png) |
 | `OpenAIGymRLExample.ipynb` | Deep Q-Network (DQN) implementation with CartPole environment | ![OpenAI Gym](2%20-%20Keras%20examples/Reinforcement%20Learning/ReadmeImages/OpenAIGym.png) |
 
 ### `Generative AI and LLM examples/`
