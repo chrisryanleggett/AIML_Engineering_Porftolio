@@ -91,13 +91,18 @@ This directory contains implementations of fundamental algorithmic paradigms inc
 - **Categorical Data Visualization**: Pie charts and dot plots for comparing categories
 - **Statistical Plotting**: Foundation techniques for data exploration and analysis
 
-## Getting Started
+### CUDA & Concurrent Programming
+- **GPU Acceleration**: CUDA kernel implementations for parallel vector operations and matrix multiplication
+- **Concurrency Patterns**: MapReduce and Repository patterns for distributed and thread-safe operations
+- **Parallel Computing**: GPU-accelerated computations for performance optimization
 
-Each notebook is self-contained with installation instructions and can be run independently. The notebooks include:
-- Environment setup and dependency installation
-- Step-by-step implementation explanations
-- Practical examples with real datasets
-- Performance monitoring and visualization
+### Agentic AI
+- **Agent Implementation**: Foundational agent development patterns and architectures
+- **LiteLLM Integration**: Environment configuration and tooling setup for LLM-powered agents
+
+### Algorithms
+- **Algorithmic Paradigms**: Greedy algorithms, divide & conquer, and dynamic programming implementations
+- **Optimization Techniques**: Runtime complexity improvements and data structure efficiency strategies
 
 ## License
 
