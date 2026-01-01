@@ -52,6 +52,9 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 
 *(Under development)*
 
+### `Algorithms/`
+This directory contains implementations of fundamental algorithmic paradigms including greedy algorithms, divide & conquer strategies, and dynamic programming solutions. The examples demonstrate both naive and optimized approaches, showcasing step-by-step problem-solving techniques and optimization strategies for improving runtime complexity and data structure efficiency.
+
 ## Key Concepts Covered
 
 ### PyTorch
