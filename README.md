@@ -30,7 +30,7 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 |----------|-------------|------------|
 | [DocumentClassifier.ipynb](1%20-%20Generative%20AI%20and%20LLM%20examples/DocumentClassifier.ipynb) | Neural network text classifier using PyTorch and TorchText for AG_NEWS dataset categorization with EmbeddingBag architecture | ![Document Classifier](1%20-%20Generative%20AI%20and%20LLM%20examples/ReadmeImages/DocClassifier.png) |
 | [MachineTranslation.ipynb](1%20-%20Generative%20AI%20and%20LLM%20examples/MachineTranslation.ipynb) | Sequence-to-sequence RNN model for German-to-English translation using PyTorch, Multi30K dataset, and encoder-decoder architecture with LSTM | ![Translation](3%20-%20PyTorch%20examples/ReadmeImages/Translation.png) |
-| [RAGDemoSystem.ipynb](1%20-%20Generative%20AI%20and%20LLM%20examples/Retrieval%20Augmented%20Generation/RAGDemoSystem.ipynb) | Retrieval-Augmented Generation (RAG) system for document Q&A using FAISS vector search, DPR encoders (Hugging Face Transformers), LangChain for PDF processing, and Claude API for answer generation | |
+| [RAGDemoSystem.ipynb](1%20-%20Generative%20AI%20and%20LLM%20examples/Retrieval%20Augmented%20Generation/RAGDemoSystem.ipynb) | Retrieval-Augmented Generation (RAG) system for document Q&A using FAISS vector search, DPR encoders (Hugging Face Transformers), LangChain for PDF processing, and Claude API for answer generation | ![RAG Demo](1%20-%20Generative%20AI%20and%20LLM%20examples/ReadmeImages/RAGImageReadme.png) |
 
 ### `General Statistics/`
 | Notebook | Description | Screenshot |
