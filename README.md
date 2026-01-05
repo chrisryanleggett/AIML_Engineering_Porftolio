@@ -1,6 +1,8 @@
 # AI/ML Engineering Portfolio
 
-A comprehensive collection of code examples and Jupyter notebooks demonstrating key concepts and practical implementations in Artificial Intelligence and Machine Learning. This portfolio showcases hands-on experience with PyTorch and Keras frameworks, covering fundamental concepts to advanced techniques including deep learning, reinforcement learning, and transformer architectures.
+A comprehensive collection of code examples and Jupyter notebooks demonstrating key concepts and practical implementations in Artificial Intelligence and Machine Learning. This portfolio showcases hands-on experience across the AI/ML spectrum, from foundational tensor operations and statistical analysis to advanced deep learning, generative AI, reinforcement learning, transformer architectures, and GPU-accelerated computing. Examples span PyTorch and Keras frameworks, covering computer vision, natural language processing, time series forecasting, agentic AI systems, and concurrent programming patterns.
+
+*These examples are also featured on my professional website: [prodai.ai](https://prodai.ai/). I'm always happy to connect—feel free to reach out via the contact form on the website or connect on LinkedIn.*
 
 
 
