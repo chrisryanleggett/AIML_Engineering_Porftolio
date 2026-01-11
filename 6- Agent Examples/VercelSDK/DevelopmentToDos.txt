@@ -1,0 +1,6 @@
+Capabilities to demonstrate
+- Let the LLM classify and route the user's query to the right action
+- Build an AI agent that knows when and how to fetch relevant, real-time info
+- Provide a chatbot interface and show documents and exact pages for retrieved answers
+- Set up OpenAI API Key for development to generate LLM responses and use the Vercel API
+- Add basic function calls so the agent can call external tools

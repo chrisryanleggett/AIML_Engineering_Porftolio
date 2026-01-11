@@ -27,3 +27,5 @@ __global__ void vectorAdd(float *a, float *b, float *c, int n) {
 
 
 
+
+
