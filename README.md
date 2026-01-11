@@ -52,6 +52,7 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 |----------|-------------|------------|
 | [StarterAgentNotebook.ipynb](6-%20Agent%20Examples/StarterAgentNotebook.ipynb) | Foundational agent implementation and development patterns | |
 | [Environment and LiteLLM Setup.ipynb](6-%20Agent%20Examples/Environment%20and%20LiteLLM%20Setup.ipynb) | Configuration for LiteLLM integration and agent tooling | |
+| [VercelSDK/](6-%20Agent%20Examples/VercelSDK) | Multi-tool calling Customer Support Agent example built with Javascript/Node JS & Vercel Open AI SDK | |
 
 *(Under development)*
 
@@ -99,9 +100,6 @@ This directory contains implementations of fundamental algorithmic paradigms inc
 - **Concurrency Patterns**: MapReduce and Repository patterns for distributed and thread-safe operations
 - **Parallel Computing**: GPU-accelerated computations for performance optimization
 
-### Agentic AI
-- **Agent Implementation**: Foundational agent development patterns and architectures
-- **LiteLLM Integration**: Environment configuration and tooling setup for LLM-powered agents
 
 ### Algorithms
 - **Algorithmic Paradigms**: Greedy algorithms, divide & conquer, and dynamic programming implementations

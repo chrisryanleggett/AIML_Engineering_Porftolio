@@ -12,9 +12,10 @@ export async function createEmbedding(content) {
         model: "text-embedding-3-small",
         input: content,
     });
+    // .data property from OpenAI API response holds embeddings array; [0] gets the first embedding
     return response.data[0].embedding;
 }
 
-// Test usage of createEmbedding function
+// Test: generate and log embedding for sample text
 const result = await createEmbedding("This text will be converted to an embedding.");
-console.log(result);
+console.log("Generated embedding array:", result);
