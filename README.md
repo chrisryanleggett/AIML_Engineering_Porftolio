@@ -52,7 +52,7 @@ A comprehensive collection of code examples and Jupyter notebooks demonstrating 
 |----------|-------------|------------|
 | [StarterAgentNotebook.ipynb](6-%20Agent%20Examples/StarterAgentNotebook.ipynb) | Foundational agent implementation and development patterns | |
 | [Environment and LiteLLM Setup.ipynb](6-%20Agent%20Examples/Environment%20and%20LiteLLM%20Setup.ipynb) | Configuration for LiteLLM integration and agent tooling | |
-| [VercelSDK/](6-%20Agent%20Examples/VercelSDK) | Multi-tool calling Customer Support Agent example built with Javascript/Node JS & Vercel Open AI SDK | |
+| [VercelSDK/](6-%20Agent%20Examples/VercelSDK) | Multi-tool calling Customer Support Agent example built with Javascript/Node JS & Vercel Open AI SDK | ![VercelSDK](6-%20Agent%20Examples/ReadmeImages/VercelSDK.png) |
 
 *(Under development)*
 
