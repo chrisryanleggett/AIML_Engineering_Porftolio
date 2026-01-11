@@ -1,11 +1,8 @@
 # Agent Examples
 
-This directory includes examples of AI Agents and Agentic Tool & Environment Setup.
+This directory contains examples of AI agent architectures and environment setup.
 
-## Files
+## Vercel AI SDK Project
 
-- `agent.py` - Core agent implementation and logic
-- `Environment and LiteLLM Setup.ipynb` - Environment configuration and LiteLLM setup
-- `StarterAgentNotebook.ipynb` - Starter notebook for agent development
-- `requirements.txt` - Python package dependencies
-- `runtime.txt` - Runtime environment specification
+See [VercelSDK/](VercelSDK/) for a full example using the Vercel AI SDK to build autonomous agents and Retrieval Augmented Generation (RAG) workflows.
+
