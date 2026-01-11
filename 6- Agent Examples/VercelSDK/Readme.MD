@@ -13,6 +13,7 @@ Architecture:
 - Basic Express server for API routes
 - Basic function calls to enable LLM to call external tools
 - Use Scrimba/basic retrieval augmented generation to increase accuracy of responses
+- Postgres database 
 
 [Vercel API Key Features](https://vercel.com/docs/api):
 - **Unified Provider Abstraction:** Switch seamlessly among 30+ top AI model providers (OpenAI, Anthropic, Google, etc.) with minimal code changes—eliminates vendor lock-in.

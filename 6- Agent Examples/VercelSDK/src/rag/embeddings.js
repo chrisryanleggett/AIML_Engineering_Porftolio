@@ -1,9 +1,6 @@
+import 'dotenv/config';
 import { openai } from '../config.js';
-
-
-const content = ["This is the text that will be converted to an embedding."];
-
-
+import { createClient } from '@supabase/supabase-js';
 
 // See OpenAI Embeddings API documentation: https://platform.openai.com/docs/api-reference/embeddings/create
 // Public async function to create embeddings form input text using OpenAI library
@@ -16,6 +13,10 @@ export async function createEmbedding(content) {
     return response.data[0].embedding;
 }
 
-// Test: generate and log embedding for sample text
-const result = await createEmbedding("This text will be converted to an embedding.");
-console.log("Generated embedding array:", result);
+// Supabase config: ensure environment variables are set, else throw descriptive errors
+const supabasePrivateKey = process.env.SUPABASE_SECRET_KEY;
+if (!supabasePrivateKey) throw new Error("SUPABASE_SECRET_KEY is missing or invalid");
+const supabaseUrl = process.env.SUPABASE_URL;
+if (!supabaseUrl) throw new Error("SUPABASE_URL is missing or invalid");
+// Export supabase connection so other files can use the Supabase client, createClient is a Supabase function
+export const supabase = createClient(supabaseUrl, supabasePrivateKey);
