@@ -17,6 +17,9 @@ async function main() {
     console.log('\n' + '='.repeat(60));
     console.log('Application completed.');
     console.log('='.repeat(60));
+
+    //create a prompt including context docs to send to the model
+    const prompt = getRagPrompt(contextString, query)
 }
 
 main();
