@@ -24,7 +24,7 @@ This will ingest documents from `src/rag/docs/` directory, generate embeddings u
 
 ## Architecture
 
-![Agent Architecture](../ReadmeImages/AgentArchitecture.png)
+![Agent Architecture](../ReadmeImages/Architecture.png)
 
 **Current Implementation:**
 - Document ingestion system that processes files from `src/rag/docs/`
