@@ -1,11 +1,18 @@
 // Application entry point
 import { ingestDocuments } from './src/rag/upsertDocuments.js';
 import { retrieveSimilarDocs } from './src/rag/retrieveSimilarDocs.js';
+import {getRagPrompt, combineDocuments} from './src/utils.js';
+import { ANSWERING_MODEL } from './src/constants.js';
+import { openai } from './src/config.js';
+
+/*
+ Build a basic retrieval system
+*/
 
 const query = "The customer support agent handles what?";
 
 async function main() {
-    // Ingest documents into Supabase
+    // Ingest documents into Supabase PostgreSQL database
     await ingestDocuments();
     
     // Retrieve similar documents
@@ -13,13 +20,28 @@ async function main() {
     
     console.log('\nRetrieved documents:');
     console.log(JSON.stringify(retrievedDocs, null, 2));
+
+    // Combine retrieved documents into a context string
+    const contextString = combineDocuments(retrievedDocs);
+    
+    //create a prompt including context docs to send to the model
+    const prompt = getRagPrompt(contextString, query);
+
+    // send prompt to model to generate response
+    const response = await openai.chat.completions.create({
+        model: ANSWERING_MODEL,
+        messages: [
+            { role: 'user', content: prompt }
+        ]
+    });
+
+    console.log('\nResponse:');
+    console.log(response.choices[0].message.content);
     
     console.log('\n' + '='.repeat(60));
     console.log('Application completed.');
     console.log('='.repeat(60));
-
-    //create a prompt including context docs to send to the model
-    const prompt = getRagPrompt(contextString, query)
+  
 }
 
 main();

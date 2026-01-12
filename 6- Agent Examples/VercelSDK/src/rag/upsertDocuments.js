@@ -1,4 +1,6 @@
 import { openai, supabase } from '../config.js';
+import { EMBEDDING_MODEL_NAME, CHUNK_OVERLAP, CHUNK_SIZE } from '../constants.js';
+import { simpleTextSplitter } from '../utils.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -15,7 +17,6 @@ const __dirname = path.dirname(__filename);
 // Constants for local document folder, embedding model, target Postgres table for embeddings, and reset option.
 // These are used for managing RAG embedding storage in Supabase/Postgres.
 const SOURCE_DOCUMENTS_DIR = path.join(__dirname, 'docs');
-const EMBEDDING_MODEL_NAME = 'text-embedding-3-small';
 const SUPABASE_TABLE_NAME = 'documents';
 const CLEAR_SUPABASE_TABLE_CONTENTS = true;
 
@@ -68,6 +69,8 @@ export async function ingestDocuments() {
         }
 
         // Process each file
+        let totalChunks = 0;
+
         for (const filename of files) {
             const filePath = path.join(docsDirPath, filename);
             console.log(`Processing file: ${filename}...`);
@@ -76,24 +79,43 @@ export async function ingestDocuments() {
             const fileContent = fs.readFileSync(filePath, 'utf-8');
             console.log(` - Read ${fileContent.length} characters.`);
 
-            try {
-                const embeddings = await openai.embeddings.create({
-                    model: EMBEDDING_MODEL_NAME,
-                    input: fileContent,
-                });
+            // Split the large text into chunks
+            const chunks = simpleTextSplitter(fileContent, CHUNK_SIZE, CHUNK_OVERLAP);
 
-                allDocumentsToInsert.push({
-                    content: fileContent,
-                    embedding: embeddings.data[0].embedding,
-                    metadata: { source: filename }, //store filename here
-                });
-                console.log(`Embedded content from ${filename}`);
-            } catch (embedError) {
-                console.error(
-                    ` - Failed to embed content from ${filename}: ${embedError.message}. Skipping chunk.`
-                );
+            if (chunks.length === 0) {
+                console.log(` - No chunks generated for this file.`);
+                continue; // Skip to next file
             }
+
+            /**
+             * Embed each chunk
+             */
+            console.log(`Embedding ${chunks.length} chunks of text`);
+            let fileChunkCount = 0;
+            for (const chunk of chunks) {
+                fileChunkCount++;
+                try {
+                    const embeddings = await openai.embeddings.create({
+                        model: EMBEDDING_MODEL_NAME,
+                        input: chunk,
+                    });
+                    // Add metadata with source filename
+                    allDocumentsToInsert.push({
+                        content: chunk,
+                        embedding: embeddings.data[0].embedding,
+                        metadata: { source: filename }, // Store filename here
+                    });
+                    console.log(`- Embedded chunk ${fileChunkCount} content from ${filename}`);
+                } catch (embedError) {
+                    console.error(
+                        `   - Failed to embed content from ${filename}: ${embedError.message}. Skipping chunk.`
+                    );
+                }
+            }
+            totalChunks += chunks.length; // Track total chunks across all files
         }
+
+        console.log(`Total chunks generated across all files: ${totalChunks}`);  
 
         if (allDocumentsToInsert.length === 0) {
             console.log(
@@ -103,7 +125,7 @@ export async function ingestDocuments() {
         }
 
         console.log(
-            `Total documents successfully prepared for insertion: ${allDocumentsToInsert.length}\n\n${JSON.stringify(allDocumentsToInsert, null,2)}`
+            `Total documents successfully prepared for insertion: ${allDocumentsToInsert.length}\n\n`
         );
 
         // Store all collected documents in Supabase
@@ -129,4 +151,3 @@ export async function ingestDocuments() {
         console.error('Error during ingestion process:', error);
         process.exit(1); //exit with error code
     }
-}
