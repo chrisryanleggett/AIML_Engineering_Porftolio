@@ -1,16 +1,18 @@
 // Application entry point
+import 'dotenv/config';
 import { ingestDocuments } from './src/rag/upsertDocuments.js';
 import { retrieveSimilarDocs } from './src/rag/retrieveSimilarDocs.js';
 import {getRagPrompt, combineDocuments} from './src/utils.js';
 import { ANSWERING_MODEL } from './src/constants.js';
-import { openai } from './src/config.js';
+import { openai } from '@ai-sdk/openai';
+import { generateText } from 'ai';
 
 /*
  Build a basic retrieval system
 */
 
 const EMBEDDING_MODEL_NAME = 'text-embedding-3-small';
-const aiModel = openai("gpt-4o")
+const aiModel = openai(ANSWERING_MODEL);
 
 
 const query = "How many houses were damaged during the great fire of london?";
@@ -31,16 +33,14 @@ async function main() {
     //create a prompt including context docs to send to the model
     const prompt = getRagPrompt(contextString, query);
 
-    // send prompt to model to generate response
-    const response = await openai.chat.completions.create({
-        model: ANSWERING_MODEL,
-        messages: [
-            { role: 'user', content: prompt }
-        ]
+    // send prompt to model to generate response using AI SDK
+    const { text } = await generateText({
+        model: aiModel,
+        prompt: prompt,
     });
 
     console.log('\nResponse:');
-    console.log(response.choices[0].message.content);
+    console.log(text);
     
     console.log('\n' + '='.repeat(60));
     console.log('Application completed.');
