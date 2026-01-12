@@ -9,6 +9,10 @@ import { openai } from './src/config.js';
  Build a basic retrieval system
 */
 
+const EMBEDDING_MODEL_NAME = 'text-embedding-3-small';
+const aiModel = openai("gpt-4o")
+
+
 const query = "How many houses were damaged during the great fire of london?";
 
 async function main() {
@@ -23,7 +27,7 @@ async function main() {
 
     // Combine retrieved documents into a context string
     const contextString = combineDocuments(retrievedDocs);
-    
+
     //create a prompt including context docs to send to the model
     const prompt = getRagPrompt(contextString, query);
 

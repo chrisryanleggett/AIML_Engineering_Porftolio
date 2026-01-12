@@ -6,7 +6,13 @@
 */
 
 export function getRagPrompt(contextString, question) {
-    return `You are a helpful assistant. Answer the user's question based ONLY on the provided context. If the context doesn't contain the answer, state politely "I'm sorry, I don't have specific information about that in the knowledge base.". Do not make up answers.
+    return `You are a helpful assistant. Answer the user's question based ONLY on the provided context. If the context doesn't contain the answer, state politely "I'm sorry, I don't have specific information about that in the knowledge base.". Do not make up answers. 
+
+IMPORTANT: 
+- Read the context carefully and extract the specific information requested
+- If the context contains the answer, provide it directly
+- If the context doesn't contain enough information to answer the question, state: "I'm sorry, I don't have specific information about that in the knowledge base."
+- Do not make up or infer answers beyond what is explicitly stated in the context
 
 Context:
 ---
