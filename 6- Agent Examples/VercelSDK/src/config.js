@@ -1,11 +1,5 @@
 import 'dotenv/config';
-import OpenAI from 'openai';
 import { createClient } from '@supabase/supabase-js';
-
-// OpenAI client
-export const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
-});
 
 // Supabase client
 const supabaseUrl = process.env.SUPABASE_URL;

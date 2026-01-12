@@ -1,14 +1,12 @@
 import 'dotenv/config';
-import { openai } from '../config.js';
-import { createClient } from '@supabase/supabase-js';
+import { openai } from '@ai-sdk/openai';
+import { embed } from 'ai';
 
-// See OpenAI Embeddings API documentation: https://platform.openai.com/docs/api-reference/embeddings/create
-// Public async function to create embeddings form input text using OpenAI library
+// Public async function to create embeddings from input text using AI SDK
 export async function createEmbedding(content) {
-    const response = await openai.embeddings.create({ // wait for async OpenAI embeddings API call
-        model: "text-embedding-3-small",
-        input: content,
+    const { embedding } = await embed({
+        model: openai.textEmbeddingModel('text-embedding-3-small'),
+        value: content,
     });
-    // .data property from OpenAI API response holds embeddings array; [0] gets the first embedding
-    return response.data[0].embedding;
+    return embedding;
 }

@@ -1,6 +1,9 @@
-import { openai, supabase } from '../config.js';
+import 'dotenv/config';
+import { supabase } from '../config.js';
 import { EMBEDDING_MODEL_NAME, CHUNK_OVERLAP, CHUNK_SIZE } from '../constants.js';
 import { simpleTextSplitter } from '../utils.js';
+import { openai } from '@ai-sdk/openai';
+import { embed } from 'ai';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -95,14 +98,15 @@ export async function ingestDocuments() {
             for (const chunk of chunks) {
                 fileChunkCount++;
                 try {
-                    const embeddings = await openai.embeddings.create({
-                        model: EMBEDDING_MODEL_NAME,
-                        input: chunk,
+                    // Create embedding using AI SDK
+                    const { embedding } = await embed({
+                        model: openai.textEmbeddingModel(EMBEDDING_MODEL_NAME),
+                        value: chunk,
                     });
                     // Add metadata with source filename
                     allDocumentsToInsert.push({
                         content: chunk,
-                        embedding: embeddings.data[0].embedding,
+                        embedding: embedding,
                         metadata: { source: filename }, // Store filename here
                     });
                     console.log(`- Embedded chunk ${fileChunkCount} content from ${filename}`);

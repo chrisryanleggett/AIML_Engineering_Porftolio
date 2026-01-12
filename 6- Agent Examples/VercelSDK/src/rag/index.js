@@ -4,7 +4,6 @@ import { ingestDocuments } from './upsertDocuments.js';
 import { retrieveSimilarDocs } from './retrieveSimilarDocs.js';
 import { getRagPrompt, combineDocuments } from '../utils.js';
 import { ANSWERING_MODEL } from '../constants.js';
-import { openai } from '../config.js';
 
 const query = "In 1843, what was the key milestone in computing?";
 
