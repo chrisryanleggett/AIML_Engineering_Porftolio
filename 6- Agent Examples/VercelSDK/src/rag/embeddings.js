@@ -12,11 +12,3 @@ export async function createEmbedding(content) {
     // .data property from OpenAI API response holds embeddings array; [0] gets the first embedding
     return response.data[0].embedding;
 }
-
-// Supabase config: ensure environment variables are set, else throw descriptive errors
-const supabasePrivateKey = process.env.SUPABASE_SECRET_KEY;
-if (!supabasePrivateKey) throw new Error("SUPABASE_SECRET_KEY is missing or invalid");
-const supabaseUrl = process.env.SUPABASE_URL;
-if (!supabaseUrl) throw new Error("SUPABASE_URL is missing or invalid");
-// Export supabase connection so other files can use the Supabase client, createClient is a Supabase function
-export const supabase = createClient(supabaseUrl, supabasePrivateKey);
