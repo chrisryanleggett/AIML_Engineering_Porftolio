@@ -1,0 +1,171 @@
+## Frontend - React Patterns and Best Practices
+
+### Component Structure
+
+Component file organization:
+```javascript
+// Imports (external, then internal)
+import React from 'react';
+import { useState } from 'react';
+import { Button } from '../components/Button';
+
+// Types/Interfaces
+interface UserCardProps {
+  user: User;
+  onEdit: (id: string) => void;
+}
+
+// Component
+export function UserCard({ user, onEdit }: UserCardProps) {
+  // Hooks
+  const [isEditing, setIsEditing] = useState(false);
+  
+  // Event handlers
+  const handleEdit = () => {
+    setIsEditing(true);
+    onEdit(user.id);
+  };
+  
+  // Render
+  return (
+    <div className="user-card">
+      {/* JSX */}
+    </div>
+  );
+}
+```
+
+### Hooks Best Practices
+
+Custom hooks pattern:
+- Extract reusable logic into custom hooks
+- Prefix custom hooks with "use" (e.g., useAuth, useApi)
+- Return objects for multiple values, arrays for pairs
+- Keep hooks focused on single responsibility
+
+Example custom hook:
+```javascript
+function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(setData)
+      .catch(setError)
+      .finally(() => setLoading(false));
+  }, [url]);
+
+  return { data, loading, error };
+}
+```
+
+Hook dependencies:
+- Always include all dependencies in useEffect
+- Use ESLint exhaustive-deps rule
+- Extract functions outside useEffect if they don't need to be dependencies
+- Use useCallback for functions passed as props
+
+### Component Composition
+
+Prefer composition over inheritance:
+- Use children prop for flexible layouts
+- Create wrapper components for common patterns
+- Use render props for complex logic sharing
+- Higher-order components for cross-cutting concerns
+
+Composition examples:
+```javascript
+// Using children
+<Card>
+  <CardHeader>Title</CardHeader>
+  <CardBody>Content</CardBody>
+  <CardFooter>Actions</CardFooter>
+</Card>
+
+// Render props
+<DataFetcher url="/api/users">
+  {({ data, loading, error }) => (
+    loading ? <Spinner /> : <UserList users={data} />
+  )}
+</DataFetcher>
+```
+
+### Form Handling
+
+Form management with React Hook Form:
+- Register inputs with register()
+- Use Controller for complex inputs
+- Validate with schema (Zod or Yup)
+- Handle errors with formState.errors
+- Submit with handleSubmit()
+
+Example form:
+```javascript
+const schema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+});
+
+function LoginForm() {
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    // Handle form submission
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register('email')} />
+      {errors.email && <span>{errors.email.message}</span>}
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+### Styling Approaches
+
+Styling options:
+- CSS Modules: Scoped styles per component
+- Styled Components: CSS-in-JS with component-scoped styles
+- Tailwind CSS: Utility-first CSS framework
+- SCSS: Enhanced CSS with variables and nesting
+
+Our approach: CSS Modules
+- One CSS file per component
+- Import styles as object
+- Use camelCase class names
+- Global styles in separate file
+
+### Testing React Components
+
+Testing strategy:
+- Unit tests: Test component logic and rendering
+- Integration tests: Test component interactions
+- Snapshot tests: Catch unintended UI changes
+- E2E tests: Test complete user flows
+
+Testing tools:
+- Jest: Test runner and assertion library
+- React Testing Library: Component testing utilities
+- Cypress: E2E testing framework
+
+Example test:
+```javascript
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Button } from './Button';
+
+test('button calls onClick when clicked', () => {
+  const handleClick = jest.fn();
+  render(<Button onClick={handleClick}>Click me</Button>);
+  
+  fireEvent.click(screen.getByText('Click me'));
+  expect(handleClick).toHaveBeenCalledTimes(1);
+});
+```
+

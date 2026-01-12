@@ -1,0 +1,70 @@
+## Customer Support - Account Management
+
+### Password Reset Process
+
+To reset a password, customers should:
+1. Navigate to the login page
+2. Click "Forgot Password" link
+3. Enter their registered email address
+4. Check email for reset link (valid for 24 hours)
+5. Click link and create new password (minimum 8 characters, must include uppercase, lowercase, number, and special character)
+
+If customer doesn't receive email:
+- Check spam/junk folder
+- Verify email address is correct
+- Wait 5-10 minutes for delivery
+- Contact support if still not received after 15 minutes
+
+### Account Verification
+
+New accounts require email verification:
+- Verification email sent immediately upon registration
+- Account is locked until email is verified
+- Verification link expires after 48 hours
+- Can request new verification email from account settings
+
+### Subscription Management
+
+Customers can manage subscriptions from their account dashboard:
+- View current plan and billing cycle
+- Upgrade or downgrade plans
+- Cancel subscription (access continues until end of billing period)
+- Update payment method
+- View billing history
+
+Cancellation policy:
+- Cancellations take effect at end of current billing period
+- No refunds for partial months
+- Data retained for 30 days after cancellation
+- Can reactivate within 30 days without losing data
+
+### Account Security
+
+Security best practices:
+- Enable two-factor authentication (2FA) for enhanced security
+- Use strong, unique passwords
+- Never share account credentials
+- Log out from shared devices
+- Review account activity regularly
+
+If account is compromised:
+- Immediately change password
+- Enable 2FA if not already active
+- Review recent account activity
+- Contact support to report suspicious activity
+- Support can lock account if needed
+
+### Profile Updates
+
+Customers can update:
+- Email address (requires verification)
+- Display name
+- Profile picture
+- Notification preferences
+- Privacy settings
+
+Email changes require:
+- Current password confirmation
+- Verification of new email address
+- 7-day grace period where old email still works
+

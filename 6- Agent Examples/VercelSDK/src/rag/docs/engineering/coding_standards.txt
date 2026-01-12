@@ -1,0 +1,112 @@
+## Engineering - Coding Standards
+
+### Code Style Guidelines
+
+Our codebase follows these standards:
+- Use 2 spaces for indentation (no tabs)
+- Maximum line length: 100 characters
+- Use meaningful variable and function names
+- Prefer const over let, avoid var
+- Use arrow functions for callbacks
+- Destructure objects and arrays when appropriate
+
+Naming conventions:
+- Variables: camelCase (e.g., `userName`, `isActive`)
+- Constants: UPPER_SNAKE_CASE (e.g., `MAX_RETRY_COUNT`)
+- Functions: camelCase with verb prefix (e.g., `getUserData`, `validateInput`)
+- Classes: PascalCase (e.g., `UserService`, `DatabaseConnection`)
+- Files: kebab-case for components, camelCase for utilities
+
+### Code Organization
+
+File structure:
+```
+src/
+  components/     # Reusable UI components
+  services/      # Business logic and API calls
+  utils/         # Helper functions
+  hooks/         # Custom React hooks
+  types/         # TypeScript type definitions
+  constants/     # Application constants
+```
+
+Import order:
+1. External libraries (React, third-party packages)
+2. Internal utilities and helpers
+3. Components
+4. Types
+5. Constants
+
+### Error Handling
+
+Always handle errors explicitly:
+- Use try-catch blocks for async operations
+- Provide meaningful error messages
+- Log errors for debugging
+- Never silently swallow errors
+- Return appropriate error responses to users
+
+Error handling pattern:
+```javascript
+try {
+  const result = await apiCall();
+  return { success: true, data: result };
+} catch (error) {
+  console.error('Operation failed:', error);
+  return { success: false, error: error.message };
+}
+```
+
+### Testing Requirements
+
+Code coverage requirements:
+- Minimum 80% code coverage for new features
+- 100% coverage for critical business logic
+- All public APIs must have tests
+- Integration tests for user flows
+
+Test structure:
+- Unit tests for individual functions
+- Integration tests for component interactions
+- E2E tests for critical user journeys
+- Mock external dependencies
+
+### Documentation
+
+Code documentation standards:
+- JSDoc comments for all public functions
+- README files for complex modules
+- Inline comments for non-obvious logic
+- Update documentation when code changes
+
+Example JSDoc:
+```javascript
+/**
+ * Validates user input and returns sanitized data
+ * @param {Object} userData - Raw user input object
+ * @param {string} userData.email - User email address
+ * @param {string} userData.name - User display name
+ * @returns {Object} Sanitized user data object
+ * @throws {Error} If validation fails
+ */
+function validateUserInput(userData) {
+  // Implementation
+}
+```
+
+### Performance Guidelines
+
+Performance best practices:
+- Lazy load heavy components
+- Debounce user input handlers
+- Use memoization for expensive calculations
+- Optimize database queries (avoid N+1 problems)
+- Implement pagination for large datasets
+- Cache frequently accessed data
+
+Performance targets:
+- Page load time: < 2 seconds
+- API response time: < 500ms (p95)
+- Time to interactive: < 3 seconds
+- Bundle size: Keep main bundle < 200KB
+

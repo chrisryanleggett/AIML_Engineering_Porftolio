@@ -1,0 +1,93 @@
+## Frontend - UI/UX Guidelines
+
+### Design System
+
+Our design system is built on:
+- Color palette: Primary blue (#0066CC), Secondary gray (#666666), Success green (#00AA44), Error red (#CC0000)
+- Typography: System font stack (San Francisco, Segoe UI, Roboto)
+- Spacing: 8px base unit (8, 16, 24, 32, 40, 48px)
+- Border radius: 4px for buttons, 8px for cards, 16px for modals
+
+Component library:
+- Built with React and TypeScript
+- Storybook for component documentation
+- All components are accessible (WCAG 2.1 AA compliant)
+- Responsive design (mobile-first approach)
+
+### Responsive Design
+
+Breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+- Large desktop: > 1440px
+
+Layout principles:
+- Mobile-first: Design for mobile, enhance for larger screens
+- Flexible grids: Use CSS Grid and Flexbox
+- Fluid typography: Use rem units with clamp()
+- Touch targets: Minimum 44x44px for interactive elements
+
+### Accessibility Standards
+
+WCAG 2.1 AA compliance requirements:
+- Color contrast: Minimum 4.5:1 for text
+- Keyboard navigation: All interactive elements accessible
+- Screen readers: Proper ARIA labels and semantic HTML
+- Focus indicators: Visible focus states on all interactive elements
+- Alt text: Descriptive alt text for all images
+
+Accessibility checklist:
+- [ ] All images have alt text
+- [ ] Forms have proper labels
+- [ ] Error messages are announced to screen readers
+- [ ] Color is not the only indicator of state
+- [ ] Interactive elements are keyboard accessible
+- [ ] Page has proper heading hierarchy (h1, h2, h3)
+
+### Component Patterns
+
+Reusable component patterns:
+- Button: Primary, secondary, tertiary variants
+- Input: Text, email, password, textarea with validation
+- Card: Container for related content
+- Modal: Overlay dialogs with backdrop
+- Dropdown: Select menus and custom dropdowns
+- Toast: Temporary notification messages
+
+Component props:
+- Always use TypeScript interfaces
+- Provide default values where appropriate
+- Document all props in JSDoc
+- Use composition over configuration
+
+### State Management
+
+State management approach:
+- Local state: useState for component-specific state
+- Shared state: Context API for app-wide state
+- Server state: React Query for API data
+- Form state: React Hook Form for form management
+
+State management principles:
+- Keep state as local as possible
+- Lift state up only when necessary
+- Use reducers for complex state logic
+- Avoid prop drilling (use Context)
+- Normalize nested data structures
+
+### Performance Optimization
+
+Frontend performance targets:
+- First Contentful Paint: < 1.5 seconds
+- Time to Interactive: < 3 seconds
+- Largest Contentful Paint: < 2.5 seconds
+- Cumulative Layout Shift: < 0.1
+
+Optimization techniques:
+- Code splitting: Lazy load routes and heavy components
+- Image optimization: Use WebP format, lazy loading
+- Bundle optimization: Tree shaking, minification
+- Memoization: React.memo, useMemo, useCallback
+- Virtual scrolling: For long lists
+

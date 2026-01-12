@@ -1,0 +1,79 @@
+## Customer Support - Billing and Refunds
+
+### Payment Methods
+
+Accepted payment methods:
+- Credit cards (Visa, MasterCard, American Express, Discover)
+- Debit cards
+- PayPal
+- Bank transfers (for enterprise accounts)
+- Wire transfers (for annual enterprise plans)
+
+Payment processing:
+- All payments processed securely through Stripe
+- Cards are charged automatically on billing date
+- Failed payments result in 3 retry attempts over 7 days
+- Account access suspended after payment failure
+
+### Billing Cycles
+
+Available billing cycles:
+- Monthly: Charged on same date each month
+- Annual: Charged once per year, 2 months free (save 16%)
+- Enterprise: Custom billing terms available
+
+Billing date:
+- Set to date of first subscription
+- Can be changed by contacting support
+- Prorated charges apply for mid-cycle changes
+
+### Refund Policy
+
+Refund eligibility:
+- Full refunds available within 30 days of initial purchase
+- Partial refunds for annual plans prorated based on unused time
+- No refunds for monthly subscriptions after first month
+- Enterprise contracts follow terms in service agreement
+
+Refund process:
+1. Customer submits refund request through support portal
+2. Support reviews request (typically within 24 hours)
+3. If approved, refund processed within 5-7 business days
+4. Refund appears on original payment method
+5. Account access revoked upon refund completion
+
+Refund exceptions:
+- No refunds for accounts terminated for terms of service violations
+- Custom enterprise contracts may have different terms
+- Refunds not available for add-on services purchased separately
+
+### Invoice Management
+
+Customers can access invoices:
+- Download from account dashboard
+- Email copies sent automatically each billing cycle
+- Historical invoices available for 7 years
+- Export invoices for accounting purposes
+
+Invoice information includes:
+- Service period covered
+- Itemized charges
+- Tax information (where applicable)
+- Payment method used
+- Invoice number for records
+
+### Billing Disputes
+
+To dispute a charge:
+1. Contact support within 60 days of charge
+2. Provide invoice number and reason for dispute
+3. Support investigates (typically 3-5 business days)
+4. Resolution communicated via email
+5. If dispute valid, refund or credit issued
+
+Common billing issues:
+- Duplicate charges: Usually resolved within 24 hours
+- Incorrect amounts: Verified against service agreement
+- Unauthorized charges: Account security review initiated
+- Failed payment fees: May be waived for first occurrence
+

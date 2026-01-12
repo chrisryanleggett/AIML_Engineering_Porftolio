@@ -1,0 +1,110 @@
+## DevOps - CI/CD Configuration
+
+### GitHub Actions Workflows
+
+Main CI/CD workflow triggers:
+- Push to main branch: Full test suite + staging deployment
+- Pull request: Run tests and linting
+- Tagged release: Production deployment
+- Manual workflow dispatch: On-demand deployments
+
+Workflow stages:
+1. Checkout code
+2. Setup Node.js environment
+3. Install dependencies
+4. Run linter (ESLint)
+5. Run type checker (TypeScript)
+6. Run unit tests
+7. Run integration tests
+8. Build application
+9. Build Docker image
+10. Push to container registry
+11. Deploy to environment
+
+### Docker Configuration
+
+Dockerfile best practices:
+- Use multi-stage builds to reduce image size
+- Leverage layer caching for faster builds
+- Use specific version tags (not "latest")
+- Run as non-root user for security
+- Minimize number of layers
+
+Example Dockerfile structure:
+```dockerfile
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+FROM node:18-alpine AS runtime
+WORKDIR /app
+RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+USER nodejs
+EXPOSE 3000
+CMD ["node", "dist/index.js"]
+```
+
+### Kubernetes Deployment
+
+Deployment manifests include:
+- Deployment: Defines pod template and replicas
+- Service: Exposes deployment internally
+- Ingress: Routes external traffic to service
+- ConfigMap: Application configuration
+- Secret: Sensitive data (encrypted)
+
+Scaling configuration:
+- Horizontal Pod Autoscaler (HPA) based on CPU/memory
+- Minimum 2 replicas for high availability
+- Maximum 10 replicas during peak load
+- Target CPU utilization: 70%
+
+### Database Migrations
+
+Migration process:
+- All schema changes via migration files
+- Migrations run automatically during deployment
+- Rollback migrations available for each change
+- Test migrations in staging before production
+
+Migration best practices:
+- Never modify existing migration files
+- Create new migration for each change
+- Test migrations on production-like data
+- Backup database before running migrations
+- Run migrations during low-traffic periods
+
+### Environment Variables
+
+Configuration management:
+- Development: .env files (not committed)
+- Staging: Kubernetes ConfigMaps
+- Production: Kubernetes Secrets (encrypted)
+
+Required environment variables:
+- DATABASE_URL: PostgreSQL connection string
+- REDIS_URL: Redis connection string
+- JWT_SECRET: Secret for token signing
+- API_KEY: External API credentials
+- ENVIRONMENT: dev/staging/prod
+
+### Build Optimization
+
+Build performance:
+- Cache node_modules between builds
+- Parallel test execution
+- Incremental TypeScript compilation
+- Docker layer caching
+- Build only changed services in monorepo
+
+Build time targets:
+- Full build: < 10 minutes
+- Incremental build: < 2 minutes
+- Docker image build: < 5 minutes
+- Total CI pipeline: < 15 minutes
+

@@ -42,16 +42,33 @@ export async function ingestDocuments() {
             );
         }
 
-        // Read files from directory
-        const files = fs.readdirSync(docsDirPath);
-
-        if (files.length === 0) {
+        // Recursively get all .txt files from directory and subdirectories
+        function getAllTxtFiles(dir, fileList = []) {
+            const files = fs.readdirSync(dir);
+            
+            files.forEach(file => {
+                const filePath = path.join(dir, file);
+                const stat = fs.statSync(filePath);
+                
+                if (stat.isDirectory()) {
+                    getAllTxtFiles(filePath, fileList);
+                } else if (file.endsWith('.txt')) {
+                    fileList.push(filePath);
+                }
+            });
+            
+            return fileList;
+        }
+        
+        const allFiles = getAllTxtFiles(docsDirPath);
+        
+        if (allFiles.length === 0) {
             console.log(
-                `No files found in ${docsDirPath}. Nothing to ingest.`
+                `No .txt files found in ${docsDirPath} or subdirectories. Nothing to ingest.`
             );
             return;
         }
-        console.log(`Found ${files.length} files to process.`);
+        console.log(`Found ${allFiles.length} .txt files to process.`);
 
         // If true, clear table so table always freshly repopulated on each run
         if (CLEAR_SUPABASE_TABLE_CONTENTS) {
@@ -74,9 +91,16 @@ export async function ingestDocuments() {
         // Process each file
         let totalChunks = 0;
 
-        for (const filename of files) {
-            const filePath = path.join(docsDirPath, filename);
-            console.log(`Processing file: ${filename}...`);
+        for (const filePath of allFiles) {
+            // Get relative path from docs directory for better metadata
+            const relativePath = path.relative(docsDirPath, filePath);
+            const filename = path.basename(filePath);
+            const directory = path.dirname(relativePath);
+            
+            // Extract agent category from directory path (e.g., "customer_support", "engineering")
+            const agentCategory = directory === '.' ? 'general' : directory;
+            
+            console.log(`Processing file: ${relativePath}...`);
 
             // Read file contents
             const fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -103,16 +127,20 @@ export async function ingestDocuments() {
                         model: openai.textEmbeddingModel(EMBEDDING_MODEL_NAME),
                         value: chunk,
                     });
-                    // Add metadata with source filename
+                    // Add metadata with source filename and agent category
                     allDocumentsToInsert.push({
                         content: chunk,
                         embedding: embedding,
-                        metadata: { source: filename }, // Store filename here
+                        metadata: { 
+                            source: relativePath,
+                            filename: filename,
+                            agent_category: agentCategory
+                        },
                     });
-                    console.log(`- Embedded chunk ${fileChunkCount} content from ${filename}`);
+                    console.log(`- Embedded chunk ${fileChunkCount} from ${relativePath}`);
                 } catch (embedError) {
                     console.error(
-                        `   - Failed to embed content from ${filename}: ${embedError.message}. Skipping chunk.`
+                        `   - Failed to embed content from ${relativePath}: ${embedError.message}. Skipping chunk.`
                     );
                 }
             }

@@ -1,0 +1,116 @@
+## Engineering - System Architecture
+
+### Application Architecture
+
+Our application follows a microservices architecture:
+- Frontend: React application with TypeScript
+- Backend: Node.js with Express
+- Database: PostgreSQL for primary data, Redis for caching
+- Message Queue: RabbitMQ for async processing
+- File Storage: AWS S3 for user uploads
+
+Service communication:
+- REST APIs for synchronous operations
+- Message queues for asynchronous tasks
+- WebSockets for real-time features
+- GraphQL for complex data queries
+
+### Database Design
+
+Database principles:
+- Normalize data to third normal form
+- Use indexes for frequently queried columns
+- Implement soft deletes (deleted_at timestamp)
+- Use transactions for multi-step operations
+- Maintain referential integrity with foreign keys
+
+Common patterns:
+- UUID primary keys for distributed systems
+- Created_at and updated_at timestamps on all tables
+- Audit logs for sensitive operations
+- Separate read replicas for scaling
+
+### API Design
+
+RESTful API conventions:
+- Use HTTP methods correctly (GET, POST, PUT, DELETE, PATCH)
+- Version APIs in URL path (/api/v1/, /api/v2/)
+- Return consistent response formats
+- Use appropriate HTTP status codes
+- Implement pagination for list endpoints
+
+Response format:
+```json
+{
+  "success": true,
+  "data": { ... },
+  "meta": {
+    "page": 1,
+    "per_page": 20,
+    "total": 100
+  }
+}
+```
+
+Error response format:
+```json
+{
+  "success": false,
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid input provided",
+    "details": { ... }
+  }
+}
+```
+
+### Security Architecture
+
+Security layers:
+1. Authentication: JWT tokens with refresh tokens
+2. Authorization: Role-based access control (RBAC)
+3. Input validation: Sanitize all user inputs
+4. Rate limiting: Prevent abuse and DDoS
+5. Encryption: HTTPS for transport, encryption at rest
+
+Security best practices:
+- Never store passwords in plain text (use bcrypt)
+- Implement CSRF protection
+- Use parameterized queries to prevent SQL injection
+- Validate and sanitize all inputs
+- Implement proper CORS policies
+- Regular security audits and dependency updates
+
+### Scalability Patterns
+
+Horizontal scaling:
+- Stateless application servers (can add/remove instances)
+- Load balancer distributes traffic
+- Database connection pooling
+- Caching layer (Redis) reduces database load
+- CDN for static assets
+
+Vertical scaling:
+- Optimize database queries
+- Implement caching strategies
+- Use database indexes effectively
+- Optimize application code performance
+
+### Deployment Architecture
+
+Deployment pipeline:
+1. Code committed to version control
+2. Automated tests run (unit, integration, E2E)
+3. Build Docker images
+4. Deploy to staging environment
+5. Manual approval for production
+6. Blue-green deployment to production
+7. Health checks and monitoring
+
+Infrastructure:
+- Container orchestration: Kubernetes
+- CI/CD: GitHub Actions
+- Monitoring: Prometheus and Grafana
+- Logging: ELK stack (Elasticsearch, Logstash, Kibana)
+- Error tracking: Sentry
+
