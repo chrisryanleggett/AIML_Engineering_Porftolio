@@ -9,7 +9,7 @@ import { openai } from './src/config.js';
  Build a basic retrieval system
 */
 
-const query = "The customer support agent handles what?";
+const query = "How many houses were damaged during the great fire of london?";
 
 async function main() {
     // Ingest documents into Supabase PostgreSQL database

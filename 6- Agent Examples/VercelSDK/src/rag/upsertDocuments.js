@@ -151,3 +151,4 @@ export async function ingestDocuments() {
         console.error('Error during ingestion process:', error);
         process.exit(1); //exit with error code
     }
+}
