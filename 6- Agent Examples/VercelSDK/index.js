@@ -56,20 +56,13 @@ async function classifyQuery(userQuery) {
         model: aiModel,
         schemaName: 'query_classification',
         schemaDescription: 'Classify user queries to determine the appropriate agent to handle them.',
+        // This is the definition of the schema for the classification object
         schema: z.object({
             reasoning: z
                 .string()
                 .describe('Brief explanation for why this classification was chosen'),
             primaryAgent: z
-                .enum([
-                    'customer_support',
-                    'engineering',
-                    'devops',
-                    'frontend',
-                    'product',
-                    'marketing',
-                    'general'
-                ])
+                .enum(['customer_support', 'engineering', 'devops', 'frontend', 'product', 'marketing', 'general'])
                 .describe('Primary specialized agent that should handle this query'),
             confidence: z
                 .number()
@@ -97,6 +90,14 @@ async function classifyQuery(userQuery) {
     return result.object;
 }
 
+/*
+The generateObject call in this function enables us to generate structured output 
+using the Vercel AI SDK Generate Object interface. This allows the model to return 
+JSON objects that match a pre-defined schema, including explicit data types and 
+required properties. By using structured output, we can ensure type safety, 
+consistency, and easy downstream processing when passing agent decisions or results 
+between systems.
+*/
 async function routeQuery(userQuery) {
     const result = await generateObject({
         model: aiModel,
@@ -107,15 +108,7 @@ async function routeQuery(userQuery) {
                 .string()
                 .describe('Detailed reasoning for the routing decision'),
             primaryAgent: z
-                .enum([
-                    'customer_support',
-                    'engineering',
-                    'devops',
-                    'frontend',
-                    'product',
-                    'marketing',
-                    'general'
-                ])
+                .enum(['customer_support', 'engineering', 'devops', 'frontend', 'product', 'marketing', 'general'])
                 .describe('Primary agent to handle this query'),
             secondaryAgents: z
                 .array(z.string())
